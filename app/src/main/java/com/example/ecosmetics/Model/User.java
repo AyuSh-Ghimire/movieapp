@@ -8,11 +8,11 @@ public class User {
         this.password = password;
     }
 
-    public User(String s, String accessedEmail, String username, String password) {
-        this.username = username;
-        this.password = password;
-    }
-    public User(String email, String username, String password) {
+    public User(String firstname, String lastname, String address, String phoneno, String email, String username, String password) {
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.address = address;
+        this.phoneno = phoneno;
         this.email = email;
         this.username = username;
         this.password = password;
@@ -72,5 +72,18 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "firstname='" + firstname + '\'' +
+                ", lastname='" + lastname + '\'' +
+                ", address='" + address + '\'' +
+                ", phoneno='" + phoneno + '\'' +
+                ", email='" + email + '\'' +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                '}';
     }
 }

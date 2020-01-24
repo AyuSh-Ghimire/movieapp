@@ -6,10 +6,13 @@ import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.POST;
 
-public class LoginAPI {
-//for login
-    @POST("users/login")
+    public interface LoginAPI {
+    //for login
+    @POST("/users/login")
     Call<Void>login(@Body User user);
+
+    @POST("/users/signup")
+    Call<Void>register(@Body User regUser);
 
 
 }

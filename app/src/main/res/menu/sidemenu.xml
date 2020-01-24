@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/Home" android:title="Home" android:icon="@drawable/ic_home_black_24dp" />
+    <item android:id="@+id/Category" android:title="Category" android:icon="@drawable/ic_list_black_24dp" />
+    <item android:id="@+id/Login" android:title="Login" android:icon="@drawable/login" />
+    <item android:id="@+id/Signup" android:title="Signup" android:icon="@drawable/ic_person_add_black_24dp" />
+</menu>

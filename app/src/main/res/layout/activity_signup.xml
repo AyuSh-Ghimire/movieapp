@@ -4,33 +4,33 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/backgroundphoto"
+    android:background="@drawable/bg1"
     tools:context=".SignupActivity">
 <LinearLayout
     android:layout_width="match_parent"
-    android:layout_marginTop="30dp"
+    android:layout_marginTop="5dp"
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:padding="63dp">
     <EditText
         android:id="@+id/firstname"
         android:layout_width="match_parent"
-        android:layout_height="48dp"
+        android:layout_height="35dp"
         android:layout_marginTop="18dp"
         android:background="@drawable/edittext_background"
         android:hint="Firtsname"
-        android:textColor="#ffff"
+        android:textColor="#ec407a"
         android:fontFamily="serif"
         android:paddingLeft="18dp"
         />
     <EditText
         android:id="@+id/lastname"
         android:layout_width="match_parent"
-        android:layout_height="48dp"
+        android:layout_height="35dp"
         android:layout_marginTop="18dp"
         android:background="@drawable/edittext_background"
         android:hint="Lastname"
-        android:textColor="#ffff"
+        android:textColor="#ec407a"
         android:fontFamily="serif"
         android:paddingLeft="18dp"
         />
@@ -38,22 +38,22 @@
     <EditText
         android:id="@+id/address"
         android:layout_width="match_parent"
-        android:layout_height="48dp"
+        android:layout_height="35dp"
         android:layout_marginTop="18dp"
         android:background="@drawable/edittext_background"
         android:hint="Address"
-        android:textColor="#ffff"
+        android:textColor="#ec407a"
         android:fontFamily="serif"
         android:paddingLeft="18dp"
         />
     <EditText
         android:id="@+id/email"
         android:layout_width="match_parent"
-        android:layout_height="48dp"
+        android:layout_height="35dp"
         android:layout_marginTop="18dp"
         android:background="@drawable/edittext_background"
         android:hint="E-mail"
-        android:textColor="#ffff"
+        android:textColor="#ec407a"
         android:fontFamily="serif"
         android:paddingLeft="18dp"
         />
@@ -61,22 +61,22 @@
     <EditText
         android:id="@+id/phoneno"
         android:layout_width="match_parent"
-        android:layout_height="48dp"
+        android:layout_height="35dp"
         android:layout_marginTop="18dp"
         android:background="@drawable/edittext_background"
         android:hint="Phoneno"
-        android:textColor="#ffff"
+        android:textColor="#ec407a"
         android:fontFamily="serif"
         android:paddingLeft="18dp"
         />
     <EditText
         android:id="@+id/username"
         android:layout_width="match_parent"
-        android:layout_height="48dp"
+        android:layout_height="35dp"
         android:layout_marginTop="18dp"
         android:background="@drawable/edittext_background"
         android:hint="Username"
-        android:textColor="#ffff"
+        android:textColor="#ec407a"
         android:fontFamily="serif"
         android:paddingLeft="18dp"
         />
@@ -84,7 +84,7 @@
     <EditText
         android:id="@+id/password"
         android:layout_width="match_parent"
-        android:layout_height="48dp"
+        android:layout_height="35dp"
         android:layout_marginTop="14dp"
         android:background="@drawable/edittext_background"
         android:hint="Password"
@@ -93,8 +93,21 @@
         android:fontFamily="serif"
         android:paddingLeft="18dp"
         />
+
+    <EditText
+        android:id="@+id/confirmpassword"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_marginTop="14dp"
+        android:background="@drawable/edittext_background"
+        android:hint="Confirm Password"
+        android:textColor="#ec407a"
+        android:inputType="textPassword"
+        android:fontFamily="serif"
+        android:paddingLeft="18dp"
+        />
     <Button
-        android:id="@+id/btnlogin"
+        android:id="@+id/btnsignup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
@@ -111,19 +124,19 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
             android:text="Already have an account?"
-            android:textColor="#ffff"
+            android:textColor="#ec407a"
             android:textSize="18dp"
             android:layout_marginLeft="30dp" />
 
 
         <TextView
-            android:id="@+id/txtsignup"
+            android:id="@+id/txtlogin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:clickable="true"
             android:text="Login"
-            android:textColor="#ffff"
-            android:textSize="40sp" />
+            android:textColor="#ec407a"
+            android:textSize="25sp" />
 
 
 
