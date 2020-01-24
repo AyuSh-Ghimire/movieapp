@@ -14,6 +14,13 @@ tools:context=".LoginActivity">
     android:padding="50dp">
 
 
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/logo1"
+        android:layout_gravity="center"/>
+
+
     <EditText
         android:id="@+id/username"
         android:layout_width="match_parent"
@@ -48,29 +55,37 @@ tools:context=".LoginActivity">
         android:fontFamily="serif"
         android:textColor="#ec407a"
         android:textSize="16dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:layout_marginBottom="28dp"
+        android:orientation="horizontal">
+
     <TextView
         android:id="@+id/txtfg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
         android:fontFamily="serif"
         android:text="Forget your password?"
         android:textColor="#ec407a"
         android:textSize="14dp"
-        android:layout_marginLeft="20dp" />
+        android:layout_marginLeft="25dp" />
 
 
     <TextView
         android:id="@+id/txtforgetpassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="4dp"
+        android:layout_marginLeft="2dp"
         android:clickable="true"
         android:fontFamily="serif"
         android:text="Get help signing in."
         android:textColor="#ec407a"
         android:textSize="14dp" />
+    </LinearLayout>
     <TextView
         android:id="@+id/txtview"
         android:layout_width="wrap_content"
