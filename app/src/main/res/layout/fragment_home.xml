@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    android:orientation="vertical"
+    tools:context=".Fragment.HomeFragment">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        >
+
+        <EditText
+            android:id="@+id/src"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:padding="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:drawableLeft="@drawable/search"
+            android:drawableStart="@drawable/search"
+            android:drawablePadding="10dp"
+            android:background="@drawable/editsearch"
+            android:hint="Search..."
+            android:focusable="false"
+            android:layout_marginTop="20dp"/>
+
+        <TextView
+            android:id="@+id/categories"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="OUR CATEGORIES"
+            android:layout_below="@id/src"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="30dp"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/categories_recyclerview"
+            android:layout_below="@id/categories"/>
+        <RelativeLayout
+            android:id="@+id/relaative"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/categories_recyclerview">
+
+            <TextView
+                android:id="@+id/txtproducts"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:text="OUR PRODUCT"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"/>
+
+            <Button
+
+                android:layout_width="80dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="20dp"
+                android:text="View All"
+                android:textSize="10dp"
+                android:background="@drawable/round_btn"
+                android:textColor="@color/black"
+                android:layout_alignParentEnd="true" />
+
+        </RelativeLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/product_recyclerview"
+            android:layout_below="@id/relaative"/>
+
+    </RelativeLayout>
+
+</ScrollView>
