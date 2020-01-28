@@ -6,6 +6,20 @@
     android:layout_height="match_parent"
     tools:context=".DashboardActivity"
     android:id="@+id/drawyerlayout">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/app_cart"
+            layout="@layout/app_cart" />
+
+        <FrameLayout
+            android:id="@+id/framelayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
 
     <com.google.android.material.navigation.NavigationView
         app:headerLayout="@layout/sideheader"
