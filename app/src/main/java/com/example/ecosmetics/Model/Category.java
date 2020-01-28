@@ -1,11 +1,11 @@
 package com.example.ecosmetics.Model;
 
-public class ProductCategory {
+public class Category {
 
     private int image;
     private String category;
 
-    public ProductCategory(int image, String category) {
+    public Category(int image, String category) {
         this.image = image;
         this.category = category;
     }
