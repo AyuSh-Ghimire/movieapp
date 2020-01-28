@@ -6,6 +6,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -13,6 +14,7 @@ import android.widget.FrameLayout;
 
 import com.example.ecosmetics.Fragment.DashboardFragment;
 import com.example.ecosmetics.Model.Category;
+import com.example.ecosmetics.Model.Product;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,6 +26,8 @@ public class DashboardActivity extends AppCompatActivity {
     private Toolbar toolbar;
     private FrameLayout frameLayout;
     public static List<Category> lstcat= new ArrayList<>();
+    public static List<Product> lstpro =new ArrayList<>();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,7 +36,7 @@ public class DashboardActivity extends AppCompatActivity {
 
 
            mDrawerLayout= findViewById(R.id.drawyerlayout);
-          // Toolbar toolbar = findViewById(R.id.app_cart);
+            Toolbar toolbar = findViewById(R.id.app_cart);
            mToggle= new ActionBarDrawerToggle(this, mDrawerLayout,toolbar,R.string.open,R.string.close);
 
             mDrawerLayout.addDrawerListener(mToggle);
@@ -42,6 +46,12 @@ public class DashboardActivity extends AppCompatActivity {
             lstcat.add(new Category(R.drawable.bg,"logo"));
             lstcat.add(new Category(R.drawable.bg,"logo"));
             lstcat.add(new Category(R.drawable.bg,"logo"));
+
+            lstpro=new ArrayList<>();
+            lstpro.add(new Product("hairmask","good for your hair",800,R.drawable.bg1));
+            lstpro.add(new Product("hairmask","good for your hair",800,R.drawable.bg1));
+            lstpro.add(new Product("hairmask","good for your hair",800,R.drawable.bg1));
+
 
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
