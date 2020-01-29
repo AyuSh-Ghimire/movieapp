@@ -4,6 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:name="android.support.PARENT_ACTIVITY"
     tools:context=".CartActivity">
+<include
+    layout="@layout/cart_layout"
+    android:id="@+id/cartbar"/>
+
+<FrameLayout
+    android:id="@+id/cartframelayout"
+    android:background="@color/dashboardbackground"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

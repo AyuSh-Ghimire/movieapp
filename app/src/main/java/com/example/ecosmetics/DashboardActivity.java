@@ -6,20 +6,29 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.FrameLayout;
+import android.widget.Toast;
 
+import com.example.ecosmetics.API.CategoryAPI;
 import com.example.ecosmetics.Fragment.DashboardFragment;
 import com.example.ecosmetics.Model.Category;
 import com.example.ecosmetics.Model.Product;
+import com.example.ecosmetics.URL.url;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class DashboardActivity extends AppCompatActivity {
 
@@ -29,6 +38,7 @@ public class DashboardActivity extends AppCompatActivity {
     private FrameLayout frameLayout;
     public static List<Category> lstcat= new ArrayList<>();
     public static List<Product> lstpro =new ArrayList<>();
+    private static final String TAG = "DashboardActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,11 +61,29 @@ public class DashboardActivity extends AppCompatActivity {
             mDrawerLayout.addDrawerListener(mToggle);
             mToggle.syncState();
 
-            lstcat=new ArrayList<>();
-            lstcat.add(new Category(R.drawable.serum,"serum"));
-            lstcat.add(new Category(R.drawable.moist,"moisturizer"));
-            lstcat.add(new Category(R.drawable.cleanser,"cleanser"));
-            lstcat.add(new Category(R.drawable.s,"sunscreen"));
+//            lstcat=new ArrayList<>();
+//            lstcat.add(new Category(R.drawable.serum,"serum"));
+//            lstcat.add(new Category(R.drawable.moist,"moisturizer"));
+//            lstcat.add(new Category(R.drawable.cleanser,"cleanser"));
+//            lstcat.add(new Category(R.drawable.s,"sunscreen"));
+
+        CategoryAPI categoryAPI = url.getInstance().create(CategoryAPI.class);
+        Call<List<Category>> categoryCall = categoryAPI.getAllCategory();
+        categoryCall.enqueue(new Callback<List<Category>>() {
+            @Override
+            public void onResponse(Call<List<Category>> call, Response<List<Category>> response) {
+                lstcat = response.body();
+                Toast.makeText(DashboardActivity.this, "Error:"+lstcat, Toast.LENGTH_SHORT).show();
+                Log.e(TAG, "onResponse: "+lstcat);
+
+            }
+
+            @Override
+            public void onFailure(Call<List<Category>> call, Throwable t) {
+                Toast.makeText(DashboardActivity.this, "Error:"+t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+                 }
+
+        });
 
             lstpro=new ArrayList<>();
             lstpro.add(new Product("Serum","Removes you blemishes",800,R.drawable.serum));

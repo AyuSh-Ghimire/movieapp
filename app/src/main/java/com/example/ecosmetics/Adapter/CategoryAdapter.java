@@ -1,6 +1,8 @@
 package com.example.ecosmetics.Adapter;
 
 import android.content.Context;
+import android.graphics.BitmapFactory;
+import android.os.StrictMode;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,7 +14,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.ecosmetics.Model.Category;
 import com.example.ecosmetics.R;
+import com.example.ecosmetics.URL.url;
 
+import java.io.InputStream;
+import java.net.URL;
 import java.util.List;
 
 public class CategoryAdapter extends  RecyclerView.Adapter<CategoryAdapter.CategoryViewHolder>{
@@ -33,10 +38,23 @@ public class CategoryAdapter extends  RecyclerView.Adapter<CategoryAdapter.Categ
 
     @Override
     public void onBindViewHolder(@NonNull CategoryViewHolder holder, int position) {
-    Category cat = categoryList.get(position);
-    holder.category_img.setImageResource(cat.getImage());
-    holder.category_name.setText(cat.getCategory());
+        Category cat = categoryList.get(position);
+        // holder.category_img.setImageResource(cat.getImage());
+        holder.category_name.setText(cat.getCategory());
+
+        String imgPath = url.BASE_URL + "uploads/" + cat.getImage();
+        StrictMode();
+        try {
+            URL url = new URL(imgPath);
+            holder.category_img.setImageBitmap(BitmapFactory.decodeStream((InputStream) url.getContent()));
+        } catch (Exception e) {
+        }
     }
+    private void StrictMode() {
+        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+        StrictMode.setThreadPolicy(policy);
+    }
+
 
     @Override
     public int getItemCount() {

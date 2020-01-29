@@ -40,4 +40,5 @@ dependencies {
     implementation 'com.squareup.retrofit2:retrofit:2.5.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.5.0'
     compileOnly 'com.google.android.wearable:wearable:2.4.0'
+    implementation 'com.cepheuen.elegant-number-button:lib:1.0.2'
 }
