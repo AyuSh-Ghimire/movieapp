@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Vibrator;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -24,6 +25,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private Button btnlogin,btnloginwithfb,btnsignup;
     private EditText username,password;
     private TextView forgetpassword;
+    Vibrator vibrator;
 
 
     @Override
@@ -37,6 +39,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         btnloginwithfb=findViewById(R.id.btnLoginWithFb);
         btnsignup=findViewById(R.id.btnSignup);
         forgetpassword=findViewById(R.id.txtforgetpassword);
+
 
         btnlogin.setOnClickListener(this);
         btnloginwithfb.setOnClickListener(this);
@@ -74,6 +77,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             public void onResponse(Call<Void> call, Response<Void> response) {
                 if(!response.isSuccessful()){
                     Toast.makeText(LoginActivity.this, "Login Error", Toast.LENGTH_SHORT).show();
+                    vibrator=(Vibrator) getSystemService(VIBRATOR_SERVICE);
+                    //vibrate in ms
+                    vibrator.vibrate(50);
                     return;
                 }
                 openDashBoard();
