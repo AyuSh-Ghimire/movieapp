@@ -8,8 +8,10 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.FrameLayout;
 
 import com.example.ecosmetics.Fragment.DashboardFragment;
@@ -37,6 +39,13 @@ public class DashboardActivity extends AppCompatActivity {
 
            mDrawerLayout= findViewById(R.id.drawyerlayout);
             Toolbar toolbar = findViewById(R.id.app_cart);
+            toolbar.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent i=new Intent(DashboardActivity.this, CartActivity.class);
+                    startActivity(i);
+                }
+            });
            mToggle= new ActionBarDrawerToggle(this, mDrawerLayout,toolbar,R.string.open,R.string.close);
 
             mDrawerLayout.addDrawerListener(mToggle);

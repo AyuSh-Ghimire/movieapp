@@ -10,7 +10,7 @@ import android.os.Bundle;
 import com.example.ecosmetics.Broadcast.BroadCastReceiver;
 
 public class BroadCastActivity extends AppCompatActivity {
-BroadCastReceiver broadCastReceiver= new BroadCastReceiver();
+BroadCastReceiver broadCastReceiver= new BroadCastReceiver(this);
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
