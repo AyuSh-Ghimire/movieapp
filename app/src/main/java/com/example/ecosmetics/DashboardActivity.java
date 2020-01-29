@@ -43,17 +43,19 @@ public class DashboardActivity extends AppCompatActivity {
             mToggle.syncState();
 
             lstcat=new ArrayList<>();
-            lstcat.add(new Category(R.drawable.bg,"logo"));
-            lstcat.add(new Category(R.drawable.bg,"logo"));
-            lstcat.add(new Category(R.drawable.bg,"logo"));
+            lstcat.add(new Category(R.drawable.serum,"serum"));
+            lstcat.add(new Category(R.drawable.moist,"moisturizer"));
+            lstcat.add(new Category(R.drawable.cleanser,"cleanser"));
+            lstcat.add(new Category(R.drawable.s,"sunscreen"));
 
             lstpro=new ArrayList<>();
-            lstpro.add(new Product("hairmask","good for your hair",800,R.drawable.bg1));
-            lstpro.add(new Product("hairmask","good for your hair",800,R.drawable.bg1));
-            lstpro.add(new Product("hairmask","good for your hair",800,R.drawable.bg1));
-            lstpro.add(new Product("hairmask","good for your hair",800,R.drawable.bg1));
-            lstpro.add(new Product("hairmask","good for your hair",800,R.drawable.bg1));
-            lstpro.add(new Product("hairmask","good for your hair",800,R.drawable.bg1));
+            lstpro.add(new Product("Serum","Removes you blemishes",800,R.drawable.serum));
+            lstpro.add(new Product("Moisturizer","makes your skin hydratate",800,R.drawable.moist));
+            lstpro.add(new Product("Sunscreen","protects your skin from uv-rays",800,R.drawable.s));
+            lstpro.add(new Product("Cleanser","Removes all your impurities",800,R.drawable.cleanser));
+            lstpro.add(new Product("hairmask","Strong your hair",800,R.drawable.ordinary));
+            lstpro.add(new Product("hairmask","Strong your hair",800,R.drawable.ordmoist));
+
 
 
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);

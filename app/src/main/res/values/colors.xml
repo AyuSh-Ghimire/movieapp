@@ -7,5 +7,6 @@
     <color name="lightpink">#E79CB7</color>
     <color name="white">#ec407a</color>
     <color name="black">#0A0505</color>
+    <color name="dashboardbackground">#f5f5f5</color>
 
 </resources>
