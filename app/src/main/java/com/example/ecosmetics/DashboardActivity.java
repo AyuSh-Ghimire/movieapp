@@ -51,6 +51,9 @@ public class DashboardActivity extends AppCompatActivity {
             lstpro.add(new Product("hairmask","good for your hair",800,R.drawable.bg1));
             lstpro.add(new Product("hairmask","good for your hair",800,R.drawable.bg1));
             lstpro.add(new Product("hairmask","good for your hair",800,R.drawable.bg1));
+            lstpro.add(new Product("hairmask","good for your hair",800,R.drawable.bg1));
+            lstpro.add(new Product("hairmask","good for your hair",800,R.drawable.bg1));
+            lstpro.add(new Product("hairmask","good for your hair",800,R.drawable.bg1));
 
 
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
