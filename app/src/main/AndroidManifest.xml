@@ -14,12 +14,15 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".CartActivity" android:parentActivityName=".CartActivity"></activity>
+        <activity android:name=".ForgetPasswordActivity"></activity>
+        <activity
+            android:name=".CartActivity"
+            android:parentActivityName=".CartActivity" />
         <activity android:name=".BroadCastActivity" />
         <activity
             android:name=".SplashActivity"
-            android:theme="@style/SplashTheme"></activity>
-        <activity android:name=".DashboardActivity"/>
+            android:theme="@style/SplashTheme" />
+        <activity android:name=".DashboardActivity" />
         <activity android:name=".MainActivity" />
         <activity android:name=".SignupActivity" />
         <activity android:name=".LoginActivity">
