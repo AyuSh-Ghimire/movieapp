@@ -39,8 +39,8 @@ public class CategoryAdapter extends  RecyclerView.Adapter<CategoryAdapter.Categ
     @Override
     public void onBindViewHolder(@NonNull CategoryViewHolder holder, int position) {
         Category cat = categoryList.get(position);
-        // holder.category_img.setImageResource(cat.getImage());
-        holder.category_name.setText(cat.getCategory());
+        holder.category_img.setImageResource(cat.getImage());
+
 
         String imgPath = url.BASE_URL + "uploads/" + cat.getImage();
         StrictMode();
@@ -49,6 +49,7 @@ public class CategoryAdapter extends  RecyclerView.Adapter<CategoryAdapter.Categ
             holder.category_img.setImageBitmap(BitmapFactory.decodeStream((InputStream) url.getContent()));
         } catch (Exception e) {
         }
+        holder.category_name.setText(cat.getCategory());
     }
     private void StrictMode() {
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();

@@ -53,7 +53,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 openSignUp();
                 break;
             case R.id.txtforgetpassword:
-                Toast.makeText(this, "Go to Change Password", Toast.LENGTH_SHORT).show();
+               openForgetpwd();
                 break;
             case R.id.btnlogin:
                 login();
@@ -99,5 +99,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     public void openSignUp(){
         Intent openSignup = new Intent(this, SignupActivity.class);
         startActivity(openSignup);
+    }
+    public void openForgetpwd(){
+        Intent openForgetpwd = new Intent(this, ForgetPasswordActivity.class);
+        startActivity(openForgetpwd);
     }
 }

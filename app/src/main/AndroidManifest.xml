@@ -14,7 +14,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ForgetPasswordActivity"></activity>
+        <activity android:name=".ForgetPasswordActivity"
+            android:parentActivityName=".ForgetPasswordActivity"></activity>
         <activity
             android:name=".CartActivity"
             android:parentActivityName=".CartActivity" />

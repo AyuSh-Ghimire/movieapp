@@ -8,5 +8,6 @@
     <color name="white">#ec407a</color>
     <color name="black">#0A0505</color>
     <color name="dashboardbackground">#f5f5f5</color>
+    <color name="txtcolor">#fff</color>
 
 </resources>
