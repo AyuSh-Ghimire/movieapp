@@ -2,19 +2,19 @@ package com.example.ecosmetics.Model;
 
 public class Category {
 
-    private int image;
+    private String image;
     private String category;
 
-    public Category(int image, String category) {
+    public Category(String image, String category) {
         this.image = image;
         this.category = category;
     }
 
-    public int getImage() {
+    public String getImage() {
         return image;
     }
 
-    public void setImage(int image) {
+    public void setImage(String image) {
         this.image = image;
     }
 

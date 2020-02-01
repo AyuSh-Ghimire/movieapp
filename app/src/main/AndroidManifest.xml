@@ -14,8 +14,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ForgetPasswordActivity"
-            android:parentActivityName=".ForgetPasswordActivity"></activity>
+        <activity android:name=".EditProfileActivity"></activity>
+        <activity android:name=".Activity.LoginActivity" />
+        <activity
+            android:name=".ForgetPasswordActivity"
+            android:parentActivityName=".ForgetPasswordActivity" />
         <activity
             android:name=".CartActivity"
             android:parentActivityName=".CartActivity" />
@@ -23,16 +26,18 @@
         <activity
             android:name=".SplashActivity"
             android:theme="@style/SplashTheme" />
-        <activity android:name=".DashboardActivity" />
-        <activity android:name=".MainActivity" />
-        <activity android:name=".SignupActivity" />
-        <activity android:name=".LoginActivity">
+        <activity
+            android:name=".DashboardActivity"
+            android:parentActivityName=".DashboardActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".MainActivity" />
+        <activity android:name=".SignupActivity" />
+        <activity android:name=".LoginActivity" />
     </application>
 
 </manifest>

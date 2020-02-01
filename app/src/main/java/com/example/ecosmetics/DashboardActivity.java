@@ -1,8 +1,10 @@
 package com.example.ecosmetics;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
@@ -18,10 +20,13 @@ import android.widget.FrameLayout;
 import android.widget.Toast;
 
 import com.example.ecosmetics.API.CategoryAPI;
+import com.example.ecosmetics.Fragment.CartFragment;
 import com.example.ecosmetics.Fragment.DashboardFragment;
+import com.example.ecosmetics.Fragment.EditProfileFragment;
 import com.example.ecosmetics.Model.Category;
 import com.example.ecosmetics.Model.Product;
 import com.example.ecosmetics.URL.url;
+import com.google.android.material.navigation.NavigationView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -29,8 +34,9 @@ import java.util.List;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+import retrofit2.http.Url;
 
-public class DashboardActivity extends AppCompatActivity {
+public class DashboardActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle mToggle;
@@ -49,6 +55,8 @@ public class DashboardActivity extends AppCompatActivity {
 
            mDrawerLayout= findViewById(R.id.drawyerlayout);
             Toolbar toolbar = findViewById(R.id.app_cart);
+            NavigationView nv = findViewById(R.id.navigationview);
+            nv.setNavigationItemSelectedListener(this);
             toolbar.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -67,23 +75,41 @@ public class DashboardActivity extends AppCompatActivity {
 //            lstcat.add(new Category(R.drawable.cleanser,"cleanser"));
 //            lstcat.add(new Category(R.drawable.s,"sunscreen"));
 
-        CategoryAPI categoryAPI = url.getInstance().create(CategoryAPI.class);
+        CategoryAPI categoryAPI= url.getInstance().create(CategoryAPI.class);
         Call<List<Category>> categoryCall = categoryAPI.getAllCategory();
+
         categoryCall.enqueue(new Callback<List<Category>>() {
             @Override
             public void onResponse(Call<List<Category>> call, Response<List<Category>> response) {
-                lstcat = response.body();
-                Toast.makeText(DashboardActivity.this, "Error:"+lstcat, Toast.LENGTH_SHORT).show();
+              lstcat = response.body();
                 Log.e(TAG, "onResponse: "+lstcat);
-
+                Toast.makeText(DashboardActivity.this, "pass:", Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void onFailure(Call<List<Category>> call, Throwable t) {
-                Toast.makeText(DashboardActivity.this, "Error:"+t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
-                 }
+                Toast.makeText(DashboardActivity.this, "fail"+t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+                Log.e(TAG, "onFailure: "+t.getLocalizedMessage());
 
+            }
         });
+
+
+//        categoryCall.enqueue(new Callback<List<Category>>() {
+//            @Override
+//            public void onResponse(Call<List<Category>> call, Response<List<Category>> response) {
+//                lstcat = response.body();
+//                Toast.makeText(DashboardActivity.this, "Error:"+lstcat, Toast.LENGTH_SHORT).show();
+//                Log.e(TAG, "onResponse: "+lstcat);
+//
+//            }
+//
+//            @Override
+//            public void onFailure(Call<List<Category>> call, Throwable t) {
+//                Toast.makeText(DashboardActivity.this, "Error:"+t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+//                 }
+//
+//        });
 
             lstpro=new ArrayList<>();
             lstpro.add(new Product("Serum","Removes you blemishes",800,R.drawable.serum));
@@ -114,5 +140,26 @@ public class DashboardActivity extends AppCompatActivity {
         fragmentTransaction.replace(frameLayout.getId(),fragment);
         fragmentTransaction.commit();
 
+    }
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+        int id=menuItem.getItemId();
+
+        switch (menuItem.getItemId()){
+            case R.id.Home:
+                getSupportFragmentManager().beginTransaction().replace(R.id.framelayout,new DashboardFragment()).commit();
+
+                break;
+
+            case R.id.Cart:
+                getSupportFragmentManager().beginTransaction().replace(R.id.framelayout,new CartFragment()).commit();
+                break;
+            case  R.id.Editprofile:
+                getSupportFragmentManager().beginTransaction().replace(R.id.framelayout,new EditProfileFragment()).commit();
+                break;
+        }
+        mDrawerLayout.closeDrawer(GravityCompat.START);
+        return true;
     }
 }

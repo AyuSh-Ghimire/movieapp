@@ -20,6 +20,8 @@ import java.io.InputStream;
 import java.net.URL;
 import java.util.List;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 public class CategoryAdapter extends  RecyclerView.Adapter<CategoryAdapter.CategoryViewHolder>{
     Context mContext;
     List<Category> categoryList;
@@ -39,8 +41,7 @@ public class CategoryAdapter extends  RecyclerView.Adapter<CategoryAdapter.Categ
     @Override
     public void onBindViewHolder(@NonNull CategoryViewHolder holder, int position) {
         Category cat = categoryList.get(position);
-        holder.category_img.setImageResource(cat.getImage());
-
+       //holder.category_img.setImageResource(cat.getImage());
 
         String imgPath = url.BASE_URL + "uploads/" + cat.getImage();
         StrictMode();
@@ -64,8 +65,8 @@ public class CategoryAdapter extends  RecyclerView.Adapter<CategoryAdapter.Categ
 
     public class CategoryViewHolder extends RecyclerView.ViewHolder{
 
-        private ImageView category_img;
-        private TextView category_name;
+        CircleImageView category_img;
+        TextView category_name;
 
         public CategoryViewHolder(@NonNull View itemView) {
             super(itemView);
