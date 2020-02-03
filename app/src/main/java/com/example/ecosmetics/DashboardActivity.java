@@ -158,6 +158,10 @@ public class DashboardActivity extends AppCompatActivity implements NavigationVi
             case  R.id.Editprofile:
                 getSupportFragmentManager().beginTransaction().replace(R.id.framelayout,new EditProfileFragment()).commit();
                 break;
+            case  R.id.Logout:
+               Intent i = new Intent(DashboardActivity.this, LoginActivity.class);
+               startActivity(i);
+                break;
         }
         mDrawerLayout.closeDrawer(GravityCompat.START);
         return true;

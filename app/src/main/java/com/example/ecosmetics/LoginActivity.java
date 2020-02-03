@@ -12,6 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.ecosmetics.API.LoginAPI;
+import com.example.ecosmetics.Model.LoginResponse;
 import com.example.ecosmetics.Model.User;
 import com.example.ecosmetics.URL.url;
 
@@ -71,10 +72,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 .build();
 
         LoginAPI loginApi = retrofit.create(LoginAPI.class);
-        Call<Void> loginCall =loginApi.login(user);
-        loginCall.enqueue(new Callback<Void>() {
+        Call<LoginResponse> loginCall =loginApi.login(user);
+        loginCall.enqueue(new Callback<LoginResponse>() {
             @Override
-            public void onResponse(Call<Void> call, Response<Void> response) {
+            public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
                 if(!response.isSuccessful()){
                     Toast.makeText(LoginActivity.this, "Login Error", Toast.LENGTH_SHORT).show();
                     vibrator=(Vibrator) getSystemService(VIBRATOR_SERVICE);
@@ -82,11 +83,12 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     vibrator.vibrate(50);
                     return;
                 }
+                System.out.println(response.body().getToken());
                 openDashBoard();
             }
 
             @Override
-            public void onFailure(Call<Void> call, Throwable t) {
+            public void onFailure(Call<LoginResponse> call, Throwable t) {
                 Toast.makeText(LoginActivity.this, "Error " + t.getLocalizedMessage() , Toast.LENGTH_SHORT).show();
             }
         });

@@ -15,7 +15,6 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
         <activity android:name=".EditProfileActivity"></activity>
-        <activity android:name=".Activity.LoginActivity" />
         <activity
             android:name=".ForgetPasswordActivity"
             android:parentActivityName=".ForgetPasswordActivity" />
@@ -29,15 +28,17 @@
         <activity
             android:name=".DashboardActivity"
             android:parentActivityName=".DashboardActivity">
+
+        </activity>
+        <activity android:name=".MainActivity" />
+        <activity android:name=".SignupActivity" />
+        <activity android:name=".LoginActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity" />
-        <activity android:name=".SignupActivity" />
-        <activity android:name=".LoginActivity" />
     </application>
 
 </manifest>
