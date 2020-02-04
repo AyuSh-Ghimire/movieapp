@@ -5,29 +5,21 @@ public class Product {
     private String productdesc;
     private int rate;
     private int quantity;
-    private int productimg;
+    private String productimg;
 
-    public Product(String productname, String productdesc, int rate, int quantity, int productimg) {
-        this.productname = productname;
-        this.productdesc = productdesc;
-        this.rate = rate;
-        this.quantity = quantity;
-        this.productimg = productimg;
-    }
-
-    public Product(String productname, String productdesc, int rate, int productimg) {
+    public Product(String productname, String productdesc, int rate, String productimg) {
         this.productname = productname;
         this.productdesc = productdesc;
         this.rate = rate;
         this.productimg = productimg;
     }
 
-    public int getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(int quantity) {
+    public Product(String productname, String productdesc, int rate, int quantity, String productimg) {
+        this.productname = productname;
+        this.productdesc = productdesc;
+        this.rate = rate;
         this.quantity = quantity;
+        this.productimg = productimg;
     }
 
     public String getProductname() {
@@ -54,12 +46,19 @@ public class Product {
         this.rate = rate;
     }
 
-    public int getProductimg() {
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
+    public String getProductimg() {
         return productimg;
     }
 
-    public void setProductimg(int productimg) {
+    public void setProductimg(String productimg) {
         this.productimg = productimg;
     }
-
 }

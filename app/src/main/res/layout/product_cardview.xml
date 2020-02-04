@@ -34,11 +34,11 @@
         android:textSize="13sp" />
 
     <TextView
-        android:id="@+id/product_desc_id"
+        android:id="@+id/product_rate_id"
         android:layout_width="match_parent"
         android:layout_height="44dp"
         android:gravity="center"
-        android:text="Product desc"
+        android:text="Product rate"
         android:textColor="#2d2d2d"
         android:textSize="13sp" />
 

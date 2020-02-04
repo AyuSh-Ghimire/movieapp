@@ -14,7 +14,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".EditProfileActivity"></activity>
+        <activity android:name=".ProductDetailedActivity"></activity>
+        <activity android:name=".EditProfileActivity" />
         <activity
             android:name=".ForgetPasswordActivity"
             android:parentActivityName=".ForgetPasswordActivity" />
@@ -27,12 +28,10 @@
             android:theme="@style/SplashTheme" />
         <activity
             android:name=".DashboardActivity"
-            android:parentActivityName=".DashboardActivity">
-
-        </activity>
+            android:parentActivityName=".DashboardActivity"></activity>
         <activity android:name=".MainActivity" />
         <activity android:name=".SignupActivity" />
-        <activity android:name=".LoginActivity" >
+        <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

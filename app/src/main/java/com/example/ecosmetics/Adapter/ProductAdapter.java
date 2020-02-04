@@ -12,10 +12,13 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.ecosmetics.DashboardActivity;
 import com.example.ecosmetics.Model.Product;
 import com.example.ecosmetics.R;
 
 import java.util.List;
+
+import static com.example.ecosmetics.CartActivity.lstproduct;
 
 public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductViewHolder> {
 
@@ -37,9 +40,28 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
     @Override
     public void onBindViewHolder(@NonNull ProductViewHolder holder, int position) {
 
-    Product pro=productList.get(position);
-    holder.produtname.setText(productList.get(position).getProductname());
-    holder.productimg.setImageResource(productList.get(position).getProductimg());
+        holder.productname.setText(lstproduct.get(position).getProductname());
+        holder.productdesc.setText(lstproduct.get(position).getProductdesc());
+        holder.prate.setText(String.valueOf(lstproduct.get(position).getRate()));
+        String imgPath = url.BASE_URL + "uploads/" + lstproduct.get(position).getProductimg();
+        StrictMode();
+        try {
+            URL url=new URL(imgPath);
+            holder.imgpro.setImageBitmap(BitmapFactory.decodeStream((InputStream) url.getContent()));
+        } catch (Exception e) {
+        }
+        holder.getView().setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(mContext,ProductDetailActivity.class);
+                intent.putExtra("product_image",lstproduct.get(position).getProductimg());
+                intent.putExtra("product_name",lstproduct.get(position).getProductname());
+                intent.putExtra("product_desc",lstproduct.get(position).getProductdesc());
+                intent.putExtra("product_rate",lstproduct.get(position).getRate());
+                ((DashboardActivity) mContext).startActivity(intent);
+            }
+        });
+
 
     }
 
@@ -50,15 +72,20 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
 
   public class ProductViewHolder extends RecyclerView.ViewHolder {
     ImageView productimg;
-    TextView produtname;
+    TextView produtname,productrate;
     CardView cardView;
+      View view;
 
       public ProductViewHolder(@NonNull View itemView) {
           super(itemView);
-
+          this.view = itemView;
           produtname=itemView.findViewById(R.id.product_name_id);
+          productrate=itemView.findViewById(R.id.product_rate_id);
           productimg=itemView.findViewById(R.id.product_img_id);
           cardView=itemView.findViewById(R.id.cardview);
+      }
+      public View getView(){
+          return view;
       }
   }
 }

@@ -69,53 +69,6 @@ public class DashboardActivity extends AppCompatActivity implements NavigationVi
             mDrawerLayout.addDrawerListener(mToggle);
             mToggle.syncState();
 
-
-        CategoryAPI categoryAPI= url.getInstance().create(CategoryAPI.class);
-        Call<List<Category>> categoryCall = categoryAPI.getAllCategory();
-
-        categoryCall.enqueue(new Callback<List<Category>>() {
-            @Override
-            public void onResponse(Call<List<Category>> call, Response<List<Category>> response) {
-              lstcat = response.body();
-                Log.e(TAG, "onResponse: "+lstcat);
-                Toast.makeText(DashboardActivity.this, "pass:", Toast.LENGTH_SHORT).show();
-            }
-
-            @Override
-            public void onFailure(Call<List<Category>> call, Throwable t) {
-                Toast.makeText(DashboardActivity.this, "fail"+t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
-                Log.e(TAG, "onFailure: "+t.getLocalizedMessage());
-
-            }
-        });
-
-
-//        categoryCall.enqueue(new Callback<List<Category>>() {
-//            @Override
-//            public void onResponse(Call<List<Category>> call, Response<List<Category>> response) {
-//                lstcat = response.body();
-//                Toast.makeText(DashboardActivity.this, "Error:"+lstcat, Toast.LENGTH_SHORT).show();
-//                Log.e(TAG, "onResponse: "+lstcat);
-//
-//            }
-//
-//            @Override
-//            public void onFailure(Call<List<Category>> call, Throwable t) {
-//                Toast.makeText(DashboardActivity.this, "Error:"+t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
-//                 }
-//
-//        });
-
-            lstpro=new ArrayList<>();
-            lstpro.add(new Product("Serum","Removes you blemishes",800,R.drawable.serum));
-            lstpro.add(new Product("Moisturizer","makes your skin hydratate",800,R.drawable.moist));
-            lstpro.add(new Product("Sunscreen","protects your skin from uv-rays",800,R.drawable.s));
-            lstpro.add(new Product("Cleanser","Removes all your impurities",800,R.drawable.cleanser));
-            lstpro.add(new Product("hairmask","Strong your hair",800,R.drawable.ordinary));
-            lstpro.add(new Product("hairmask","Strong your hair",800,R.drawable.ordmoist));
-
-
-
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
             frameLayout=findViewById(R.id.framelayout);
