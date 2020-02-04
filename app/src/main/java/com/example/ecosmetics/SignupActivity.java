@@ -13,6 +13,7 @@ import android.widget.Toast;
 import com.example.ecosmetics.API.LoginAPI;
 import com.example.ecosmetics.Model.User;
 import com.example.ecosmetics.URL.url;
+import com.example.ecosmetics.serverresponse.SignUpResponse;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -76,11 +77,11 @@ public class SignupActivity extends AppCompatActivity {
 
            User regUser = new User(Firstname,Lastname,Address,Phoneno,Email,Username,Password);
                 LoginAPI loginAPI = url.getInstance().create(LoginAPI.class);
-                Call<Void> voidCall = loginAPI.register(regUser);
+                Call<SignUpResponse> voidCall = loginAPI.register(regUser);
 
-                voidCall.enqueue(new Callback<Void>() {
+                voidCall.enqueue(new Callback<SignUpResponse>() {
                     @Override
-                    public void onResponse(Call<Void> call, Response<Void> response) {
+                    public void onResponse(Call<SignUpResponse> call, Response<SignUpResponse> response) {
                     if(!response.isSuccessful()){
                         Toast.makeText(SignupActivity.this, "User not registered" + response.code(), Toast.LENGTH_SHORT).show();
                         return;
@@ -89,7 +90,7 @@ public class SignupActivity extends AppCompatActivity {
                     }
 
                     @Override
-                    public void onFailure(Call<Void> call, Throwable t) {
+                    public void onFailure(Call<SignUpResponse> call, Throwable t) {
                     Toast.makeText(SignupActivity.this, "Error found" + t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
                     }
                 });
