@@ -65,34 +65,49 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         }
     }
     public void login(){
-    User user= new User(username.getText().toString(), password.getText().toString());
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(url.BASE_URL)
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
 
-        LoginAPI loginApi = retrofit.create(LoginAPI.class);
-        Call<LoginResponse> loginCall =loginApi.login(user);
-        loginCall.enqueue(new Callback<LoginResponse>() {
-            @Override
-            public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
-                if(!response.isSuccessful()){
-                    Toast.makeText(LoginActivity.this, "Login Error", Toast.LENGTH_SHORT).show();
-                    vibrator=(Vibrator) getSystemService(VIBRATOR_SERVICE);
-                    //vibrate in ms
-                    vibrator.vibrate(50);
-                    return;
-                }
-                System.out.println(response.body().getToken());
-                openDashBoard();
-            }
+        String uname = username.getText().toString();
+        String pwd = password.getText().toString();
 
-            @Override
-            public void onFailure(Call<LoginResponse> call, Throwable t) {
-                Toast.makeText(LoginActivity.this, "Error " + t.getLocalizedMessage() , Toast.LENGTH_SHORT).show();
-            }
-        });
+        LoginBLL loginBLL = new LoginBLL();
+        StrictModeClass.StrictMode();
+        if (loginBLL.checkUser(username, password)) {
+            Intent intent = new Intent(LoginActivity.this, DashboardActivity.class);
+            startActivity(intent);
+            finish();
+        } else {
+            Toast.makeText(this, "Either username or password is incorrect", Toast.LENGTH_SHORT).show();
+            username.requestFocus();
+        }
     }
+//    User user= new User(username.getText().toString(), password.getText().toString());
+//        Retrofit retrofit = new Retrofit.Builder()
+//                .baseUrl(url.BASE_URL)
+//                .addConverterFactory(GsonConverterFactory.create())
+//                .build();
+//
+//        LoginAPI loginApi = retrofit.create(LoginAPI.class);
+//        Call<LoginResponse> loginCall =loginApi.login(user);
+//        loginCall.enqueue(new Callback<LoginResponse>() {
+//            @Override
+//            public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
+//                if(!response.isSuccessful()){
+//                    Toast.makeText(LoginActivity.this, "Login Error", Toast.LENGTH_SHORT).show();
+//                    vibrator=(Vibrator) getSystemService(VIBRATOR_SERVICE);
+//                    //vibrate in ms
+//                    vibrator.vibrate(50);
+//                    return;
+//                }
+//                System.out.println(response.body().getToken());
+//                openDashBoard();
+//            }
+//
+//            @Override
+//            public void onFailure(Call<LoginResponse> call, Throwable t) {
+//                Toast.makeText(LoginActivity.this, "Error " + t.getLocalizedMessage() , Toast.LENGTH_SHORT).show();
+//            }
+//        });
+    //}
 
     public void openDashBoard(){
         Intent openDash = new Intent(this, DashboardActivity.class);
