@@ -9,24 +9,34 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.FrameLayout;
+import android.widget.TextView;
 
+import com.example.ecosmetics.API.LoginAPI;
 import com.example.ecosmetics.Fragment.CartFragment;
 import com.example.ecosmetics.Fragment.DashboardFragment;
 import com.example.ecosmetics.Model.Category;
 import com.example.ecosmetics.Model.Product;
+import com.example.ecosmetics.Model.User;
 import com.example.ecosmetics.URL.url;
 import com.google.android.material.navigation.NavigationView;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
 public class DashboardActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
+    Context context;
     private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle mToggle;
     private Toolbar toolbar;
@@ -35,16 +45,41 @@ public class DashboardActivity extends AppCompatActivity implements NavigationVi
     public static List<Product> lstpro =new ArrayList<>();
     private static final String TAG = "DashboardActivity";
 
+    private TextView hloginusername;
+    private TextView hloginemail;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
+        context=this;
         getSupportActionBar().hide();
 
 
            mDrawerLayout= findViewById(R.id.drawyerlayout);
             Toolbar toolbar = findViewById(R.id.app_cart);
             NavigationView nv = findViewById(R.id.navigationview);
+
+            View headerView= LayoutInflater.from(context).inflate(R.layout.sideheader,null);
+            nv.addHeaderView(headerView);
+            hloginusername = headerView.findViewById(R.id.loginusername);
+            hloginemail = headerView.findViewById(R.id.loginemail);
+
+        LoginAPI api = url.getInstance().create(LoginAPI.class);
+        Call<User> getuserdetails = api.getUserDetails(url.token);
+
+        getuserdetails.enqueue(new Callback<User>() {
+            @Override
+            public void onResponse(Call<User> call, Response<User> response) {
+                hloginusername.setText(response.body().getFirstname());
+                hloginemail.setText(response.body().getEmail());
+            }
+
+            @Override
+            public void onFailure(Call<User> call, Throwable t) {
+
+            }
+        });
             nv.setNavigationItemSelectedListener(this);
             toolbar.setOnClickListener(new View.OnClickListener() {
                 @Override
