@@ -24,6 +24,8 @@ import java.io.InputStream;
 import java.net.URL;
 import java.util.List;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 import static com.example.ecosmetics.CartActivity.lstproduct;
 import static com.example.ecosmetics.DashboardActivity.lstpro;
 import static com.example.ecosmetics.strictmode.StrictModeClass.StrictMode;
@@ -31,10 +33,10 @@ import static com.example.ecosmetics.strictmode.StrictModeClass.StrictMode;
 public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductViewHolder> {
 
     Context mContext;
-    List<Product> productList;
-    public ProductAdapter(Context mContext, List<Product> productList){
-        this.mContext =mContext;
-        this.productList=productList;
+    List<Product> lstpro;
+    public ProductAdapter(Context context, List<Product> lstpro){
+        this.mContext =context;
+        this.lstpro=lstpro;
     }
 
 
@@ -66,6 +68,8 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
                 intent.putExtra("product_desc",lstpro.get(position).getProductdesc());
                 intent.putExtra("product_rate",lstpro.get(position).getRate());
                 ((DashboardActivity) mContext).startActivity(intent);
+
+
             }
         });
 
@@ -77,11 +81,11 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
 
     @Override
     public int getItemCount() {
-        return productList.size();
+        return lstpro.size();
     }
 
   public class ProductViewHolder extends RecyclerView.ViewHolder {
-    ImageView productimg;
+    CircleImageView productimg;
     TextView produtname,productrate;
       View view;
 

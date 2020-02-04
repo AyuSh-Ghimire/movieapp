@@ -14,7 +14,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ProductDetailedActivity"></activity>
+        <activity android:name=".ProductDetailedActivity"
+            android:parentActivityName=".ProductDetailedActivity"></activity>
         <activity android:name=".EditProfileActivity" />
         <activity
             android:name=".ForgetPasswordActivity"
