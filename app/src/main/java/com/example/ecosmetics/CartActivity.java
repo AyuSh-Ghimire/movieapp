@@ -28,7 +28,7 @@ public class CartActivity extends AppCompatActivity {
 
 
         lstproduct=new ArrayList<>();
-        lstproduct.add(new Product("cleanser","Cleanser",560,R.drawable.cleanser));
+        //lstproduct.add(new Product("cleanser","Cleanser",560,R.drawable.cleanser));
     }
 
     private void setFragment(CartFragment cartFragment) {

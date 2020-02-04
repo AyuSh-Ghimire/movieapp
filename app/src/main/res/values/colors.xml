@@ -9,5 +9,6 @@
     <color name="black">#0A0505</color>
     <color name="dashboardbackground">#f5f5f5</color>
     <color name="txtcolor">#fff</color>
+    <color name="probg">#fff</color>
 
 </resources>

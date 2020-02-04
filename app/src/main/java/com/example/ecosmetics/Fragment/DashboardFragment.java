@@ -16,10 +16,12 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.example.ecosmetics.API.CategoryAPI;
+import com.example.ecosmetics.API.ProductAPI;
 import com.example.ecosmetics.Adapter.CategoryAdapter;
 import com.example.ecosmetics.Adapter.ProductAdapter;
 import com.example.ecosmetics.DashboardActivity;
 import com.example.ecosmetics.Model.Category;
+import com.example.ecosmetics.Model.Product;
 import com.example.ecosmetics.R;
 import com.example.ecosmetics.URL.url;
 
@@ -68,6 +70,7 @@ public class DashboardFragment extends Fragment {
         categoryCall.enqueue(new Callback<List<Category>>() {
             @Override
             public void onResponse(Call<List<Category>> call, Response<List<Category>> response) {
+                Toast.makeText(context,"category fetched", Toast.LENGTH_SHORT).show();
                 lstcat = response.body();
                 CategoryAdapter ca = new CategoryAdapter(context,lstcat);
                 procat_recyclerview.setAdapter(ca);
@@ -79,6 +82,24 @@ public class DashboardFragment extends Fragment {
                 Toast.makeText(context, "fail"+t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
                 Log.e(TAG, "onFailure: "+t.getLocalizedMessage());
 
+            }
+        });
+
+        ProductAPI productAPI = url.getInstance().create(ProductAPI.class);
+        Call<List<Product>> productCall = productAPI.getAllProduct();
+        productCall.enqueue(new Callback<List<Product>>() {
+            @Override
+            public void onResponse(Call<List<Product>> call, Response<List<Product>> response) {
+                Toast.makeText(context,"Product fetched", Toast.LENGTH_SHORT).show();
+                lstpro = response.body();
+                ProductAdapter pa = new ProductAdapter(context,lstpro);
+                procat_recyclerview.setAdapter(pa);
+            }
+
+            @Override
+            public void onFailure(Call<List<Product>> call, Throwable t) {
+                Toast.makeText(context, "failed to fetched" + t.getLocalizedMessage(),Toast.LENGTH_SHORT).show();
+                Log.e(TAG, "onFailure: " + t.getLocalizedMessage());
             }
         });
 

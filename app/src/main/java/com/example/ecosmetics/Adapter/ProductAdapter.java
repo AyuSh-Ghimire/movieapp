@@ -2,6 +2,8 @@ package com.example.ecosmetics.Adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.BitmapFactory;
+import android.os.StrictMode;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,11 +16,17 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.ecosmetics.DashboardActivity;
 import com.example.ecosmetics.Model.Product;
+import com.example.ecosmetics.ProductDetailedActivity;
 import com.example.ecosmetics.R;
+import com.example.ecosmetics.URL.url;
 
+import java.io.InputStream;
+import java.net.URL;
 import java.util.List;
 
 import static com.example.ecosmetics.CartActivity.lstproduct;
+import static com.example.ecosmetics.DashboardActivity.lstpro;
+import static com.example.ecosmetics.strictmode.StrictModeClass.StrictMode;
 
 public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductViewHolder> {
 
@@ -38,31 +46,33 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ProductViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ProductViewHolder holder, final int position) {
 
-        holder.productname.setText(lstproduct.get(position).getProductname());
-        holder.productdesc.setText(lstproduct.get(position).getProductdesc());
-        holder.prate.setText(String.valueOf(lstproduct.get(position).getRate()));
-        String imgPath = url.BASE_URL + "uploads/" + lstproduct.get(position).getProductimg();
+        holder.produtname.setText(lstpro.get(position).getProductname());
+        holder.productrate.setText(String.valueOf(lstpro.get(position).getRate()));
+        String imgPath = url.BASE_URL + "uploads/" + lstpro.get(position).getProductimg();
         StrictMode();
         try {
             URL url=new URL(imgPath);
-            holder.imgpro.setImageBitmap(BitmapFactory.decodeStream((InputStream) url.getContent()));
+            holder.productimg.setImageBitmap(BitmapFactory.decodeStream((InputStream) url.getContent()));
         } catch (Exception e) {
         }
         holder.getView().setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(mContext,ProductDetailActivity.class);
-                intent.putExtra("product_image",lstproduct.get(position).getProductimg());
-                intent.putExtra("product_name",lstproduct.get(position).getProductname());
-                intent.putExtra("product_desc",lstproduct.get(position).getProductdesc());
-                intent.putExtra("product_rate",lstproduct.get(position).getRate());
+                Intent intent = new Intent(mContext, ProductDetailedActivity.class);
+                intent.putExtra("product_image",lstpro.get(position).getProductimg());
+                intent.putExtra("product_name",lstpro.get(position).getProductname());
+                intent.putExtra("product_desc",lstpro.get(position).getProductdesc());
+                intent.putExtra("product_rate",lstpro.get(position).getRate());
                 ((DashboardActivity) mContext).startActivity(intent);
             }
         });
 
-
+    }
+    private void StrictMode() {
+        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+        StrictMode.setThreadPolicy(policy);
     }
 
     @Override
@@ -73,7 +83,6 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
   public class ProductViewHolder extends RecyclerView.ViewHolder {
     ImageView productimg;
     TextView produtname,productrate;
-    CardView cardView;
       View view;
 
       public ProductViewHolder(@NonNull View itemView) {
@@ -82,7 +91,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
           produtname=itemView.findViewById(R.id.product_name_id);
           productrate=itemView.findViewById(R.id.product_rate_id);
           productimg=itemView.findViewById(R.id.product_img_id);
-          cardView=itemView.findViewById(R.id.cardview);
+
       }
       public View getView(){
           return view;
