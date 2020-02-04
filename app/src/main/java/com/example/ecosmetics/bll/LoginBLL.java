@@ -2,6 +2,12 @@ package com.example.ecosmetics.bll;
 
 import com.example.ecosmetics.API.LoginAPI;
 import com.example.ecosmetics.URL.url;
+import com.example.ecosmetics.serverresponse.SignUpResponse;
+
+import java.io.IOException;
+
+import retrofit2.Call;
+import retrofit2.Response;
 
 public class LoginBLL {
     boolean isSuccess = false;
