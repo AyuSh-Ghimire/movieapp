@@ -54,14 +54,10 @@ public class DashboardFragment extends Fragment {
         // Inflate the layout for this fragment
        View view = inflater.inflate(R.layout.fragment_dashboard, container, false);
        procat_recyclerview=view.findViewById(R.id.procat_recyclerview);
-       rv_product=view.findViewById(R.id.pro_recyclerview);
-
-        CategoryAdapter categoryAdapter=new CategoryAdapter(getContext(),lstcat);
-        procat_recyclerview.setAdapter(categoryAdapter);
         procat_recyclerview.setLayoutManager(new LinearLayoutManager(getContext(),RecyclerView.HORIZONTAL,false));
 
-        ProductAdapter productAdapter =new ProductAdapter(getContext(),lstpro);
-        rv_product.setAdapter(productAdapter);
+
+        rv_product=view.findViewById(R.id.pro_recyclerview);
         rv_product.setLayoutManager(new GridLayoutManager(getContext(),3));
 
         CategoryAPI categoryAPI= url.getInstance().create(CategoryAPI.class);
@@ -70,7 +66,7 @@ public class DashboardFragment extends Fragment {
         categoryCall.enqueue(new Callback<List<Category>>() {
             @Override
             public void onResponse(Call<List<Category>> call, Response<List<Category>> response) {
-                Toast.makeText(context,"category fetched", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(context,"category fetched", Toast.LENGTH_SHORT).show();
                 lstcat = response.body();
                 CategoryAdapter ca = new CategoryAdapter(context,lstcat);
                 procat_recyclerview.setAdapter(ca);
@@ -90,10 +86,10 @@ public class DashboardFragment extends Fragment {
         productCall.enqueue(new Callback<List<Product>>() {
             @Override
             public void onResponse(Call<List<Product>> call, Response<List<Product>> response) {
-                Toast.makeText(context,"Product fetched", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(context,"Product fetched", Toast.LENGTH_SHORT).show();
                 lstpro = response.body();
                 ProductAdapter pa = new ProductAdapter(context,lstpro);
-                procat_recyclerview.setAdapter(pa);
+                rv_product.setAdapter(pa);
             }
 
             @Override

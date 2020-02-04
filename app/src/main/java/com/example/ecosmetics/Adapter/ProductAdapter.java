@@ -40,8 +40,8 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
 
     @NonNull
     @Override
-    public ProductViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-    View v  =LayoutInflater.from(mContext).inflate(R.layout.product_cardview,parent,false);
+    public ProductAdapter.ProductViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    View v  =LayoutInflater.from(parent.getContext()).inflate(R.layout.product_cardview,parent,false);
     return new ProductViewHolder(v);
     }
 
