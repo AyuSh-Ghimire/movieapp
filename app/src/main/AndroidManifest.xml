@@ -16,7 +16,7 @@
         android:usesCleartextTraffic="true">
         <activity android:name=".ProductDetailedActivity"
             android:parentActivityName=".ProductDetailedActivity"></activity>
-        <activity android:name=".EditProfileActivity" />
+        <activity android:name=".EditProfileActivity" android:parentActivityName=".EditProfileActivity" />
         <activity
             android:name=".ForgetPasswordActivity"
             android:parentActivityName=".ForgetPasswordActivity" />

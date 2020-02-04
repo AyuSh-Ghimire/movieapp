@@ -8,21 +8,15 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.FrameLayout;
-import android.widget.Toast;
 
-import com.example.ecosmetics.API.CategoryAPI;
 import com.example.ecosmetics.Fragment.CartFragment;
 import com.example.ecosmetics.Fragment.DashboardFragment;
-import com.example.ecosmetics.Fragment.EditProfileFragment;
 import com.example.ecosmetics.Model.Category;
 import com.example.ecosmetics.Model.Product;
 import com.example.ecosmetics.URL.url;
@@ -30,11 +24,6 @@ import com.google.android.material.navigation.NavigationView;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-import retrofit2.http.Url;
 
 public class DashboardActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -104,14 +93,23 @@ public class DashboardActivity extends AppCompatActivity implements NavigationVi
                 getSupportFragmentManager().beginTransaction().replace(R.id.framelayout,new CartFragment()).commit();
                 break;
             case  R.id.Editprofile:
-                getSupportFragmentManager().beginTransaction().replace(R.id.framelayout,new EditProfileFragment()).commit();
+              Intent openeditprofile =new Intent(DashboardActivity.this, EditProfileActivity.class);
+              startActivity(openeditprofile);
                 break;
             case  R.id.Logout:
-               Intent i = new Intent(DashboardActivity.this, LoginActivity.class);
-               startActivity(i);
+                logout();
                 break;
         }
         mDrawerLayout.closeDrawer(GravityCompat.START);
         return true;
     }
+
+    private void logout() {
+        if(url.token!="Bearer"){
+            url.token="Bearer";
+        }
+        Intent gologout= new Intent(DashboardActivity.this,LoginActivity.class);
+        startActivity(gologout);
+    }
+
 }
