@@ -69,11 +69,6 @@ public class DashboardActivity extends AppCompatActivity implements NavigationVi
             mDrawerLayout.addDrawerListener(mToggle);
             mToggle.syncState();
 
-//            lstcat=new ArrayList<>();
-//            lstcat.add(new Category(R.drawable.serum,"serum"));
-//            lstcat.add(new Category(R.drawable.moist,"moisturizer"));
-//            lstcat.add(new Category(R.drawable.cleanser,"cleanser"));
-//            lstcat.add(new Category(R.drawable.s,"sunscreen"));
 
         CategoryAPI categoryAPI= url.getInstance().create(CategoryAPI.class);
         Call<List<Category>> categoryCall = categoryAPI.getAllCategory();
