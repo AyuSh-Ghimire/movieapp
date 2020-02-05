@@ -32,7 +32,7 @@ public class BroadCastReceiver extends BroadcastReceiver {
             );
             if(noConnectivity){
                 Toast.makeText(context,"Disconnected", Toast.LENGTH_SHORT).show();
-                DisplayNotification();
+               DisplayNotification();
             }
             else{
                 Toast.makeText(context,"Connected", Toast.LENGTH_SHORT).show();

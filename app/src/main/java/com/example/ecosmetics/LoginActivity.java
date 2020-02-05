@@ -9,9 +9,14 @@ import android.app.Notification;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
+import android.hardware.SensorManager;
 import android.net.ConnectivityManager;
 import android.os.Bundle;
 import android.os.Vibrator;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -39,6 +44,7 @@ public class LoginActivity extends AppCompatActivity {
     private TextView forgetpassword;
     Vibrator vibrator;
     public NotificationManagerCompat notificationManagerCompat;
+    public SensorManager sensorManager;
 
 
     @Override
@@ -56,7 +62,7 @@ public class LoginActivity extends AppCompatActivity {
         btnloginwithfb=findViewById(R.id.btnLoginWithFb);
         btnsignup=findViewById(R.id.btnSignup);
         forgetpassword=findViewById(R.id.txtforgetpassword);
-
+        sensorGyro();
 
         btnloginwithfb.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -89,11 +95,52 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
+    private void sensorGyro() {
+
+        sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
+        Sensor sensor = sensorManager.getDefaultSensor(Sensor.TYPE_GYROSCOPE);
+
+        SensorEventListener sensorEventListener = new SensorEventListener() {
+            @Override
+            public void onSensorChanged(SensorEvent event) {
+
+                if (event.values[1] < 0) {
+                    login();
+                    finish();
+
+                } else if (event.values[1] > 0) {
+
+                }
+            }
+
+            @Override
+            public void onAccuracyChanged(Sensor sensor, int accuracy) {
+
+            }
+        };
+
+        if (sensor != null) {
+            sensorManager.registerListener(sensorEventListener, sensor, SensorManager.SENSOR_DELAY_NORMAL);
+
+        } else {
+            Toast.makeText(this, "No sensor found", Toast.LENGTH_SHORT).show();
+        }
+    }
+
 
     private void login(){
 
         String username = etusername.getText().toString();
         String password = etpassword.getText().toString();
+
+        if (TextUtils.isEmpty(etusername.getText())) {
+            etusername.setError("Enter username");
+            return;
+
+        } else if (TextUtils.isEmpty(etpassword.getText())) {
+            etpassword.setError("Enter password");
+            return;
+        }
 
         LoginBLL loginBLL = new LoginBLL();
         StrictModeClass.StrictMode();
@@ -106,6 +153,8 @@ public class LoginActivity extends AppCompatActivity {
         } else {
             Toast.makeText(this, "Either username or password is incorrect", Toast.LENGTH_SHORT).show();
             etusername.requestFocus();
+            Vibrator vibrator=(Vibrator) getSystemService(VIBRATOR_SERVICE);
+            vibrator.vibrate(2000);
         }
     }
     private void notifiy() {
@@ -119,31 +168,31 @@ public class LoginActivity extends AppCompatActivity {
         notificationManagerCompat.notify(1, notification);
     }
 
-    @Override
-    public void onBackPressed() {
+//    @Override
+//    public void onBackPressed() {
 //        super.onBackPressed();
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-
-        builder.setMessage("Are you sure you want to exit")
-                .setCancelable(false)
-                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        finish();
-                        System.exit(0);
-                    }
-                })
-
-                .setNegativeButton("No", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        dialog.cancel();
-                    }
-                });
-
-        AlertDialog alertDialog = builder.create();
-        alertDialog.show();
-    }
+//        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+//
+//        builder.setMessage("Are you sure you want to exit")
+//                .setCancelable(false)
+//                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+//                    @Override
+//                    public void onClick(DialogInterface dialog, int which) {
+//                        finish();
+//                        System.exit(0);
+//                    }
+//                })
+//
+//                .setNegativeButton("No", new DialogInterface.OnClickListener() {
+//                    @Override
+//                    public void onClick(DialogInterface dialog, int which) {
+//                        dialog.cancel();
+//                    }
+//                });
+//
+//        AlertDialog alertDialog = builder.create();
+//        alertDialog.show();
+//    }
 
     BroadCastReceiver broadCastReceiver= new BroadCastReceiver(this);
 
