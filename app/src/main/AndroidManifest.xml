@@ -23,7 +23,6 @@
         <activity
             android:name=".CartActivity"
             android:parentActivityName=".CartActivity" />
-        <activity android:name=".BroadCastActivity" />
         <activity
             android:name=".SplashActivity"
             android:theme="@style/SplashTheme" />

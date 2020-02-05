@@ -1,8 +1,15 @@
 package com.example.ecosmetics;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 
+import android.app.AlertDialog;
+import android.app.Notification;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.IntentFilter;
+import android.net.ConnectivityManager;
 import android.os.Bundle;
 import android.os.Vibrator;
 import android.view.View;
@@ -12,10 +19,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.ecosmetics.API.LoginAPI;
+import com.example.ecosmetics.Broadcast.BroadCastReceiver;
 import com.example.ecosmetics.Model.LoginResponse;
 import com.example.ecosmetics.Model.User;
 import com.example.ecosmetics.URL.url;
 import com.example.ecosmetics.bll.LoginBLL;
+import com.example.ecosmetics.createchannel.CreateChannel;
 import com.example.ecosmetics.strictmode.StrictModeClass;
 
 import retrofit2.Call;
@@ -29,12 +38,17 @@ public class LoginActivity extends AppCompatActivity {
     private EditText etusername,etpassword;
     private TextView forgetpassword;
     Vibrator vibrator;
+    public NotificationManagerCompat notificationManagerCompat;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        notificationManagerCompat = NotificationManagerCompat.from(this);
+        CreateChannel channel = new CreateChannel(this);
+        channel.createChannel();
 
         etusername=findViewById(R.id.username);
         etpassword=findViewById(R.id.password);
@@ -70,9 +84,11 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 login();
+
             }
         });
     }
+
 
     private void login(){
 
@@ -82,13 +98,66 @@ public class LoginActivity extends AppCompatActivity {
         LoginBLL loginBLL = new LoginBLL();
         StrictModeClass.StrictMode();
         if (loginBLL.checkUser(username, password)) {
+            notifiy();
             Intent intent = new Intent(LoginActivity.this, DashboardActivity.class);
             startActivity(intent);
             finish();
+
         } else {
             Toast.makeText(this, "Either username or password is incorrect", Toast.LENGTH_SHORT).show();
             etusername.requestFocus();
         }
     }
+    private void notifiy() {
+        Notification notification = new NotificationCompat.Builder(this, CreateChannel.CHANNEL_1)
+                .setSmallIcon(R.drawable.ic_shopping_cart_black_24dp)
+                .setContentTitle("My E-Cosmetics")
+                .setContentText("Login success :" + etusername.getText().toString())
+                .setCategory(NotificationCompat.CATEGORY_MESSAGE)
+                .build();
+
+        notificationManagerCompat.notify(1, notification);
+    }
+
+    @Override
+    public void onBackPressed() {
+//        super.onBackPressed();
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+
+        builder.setMessage("Are you sure you want to exit")
+                .setCancelable(false)
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        finish();
+                        System.exit(0);
+                    }
+                })
+
+                .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.cancel();
+                    }
+                });
+
+        AlertDialog alertDialog = builder.create();
+        alertDialog.show();
+    }
+
+    BroadCastReceiver broadCastReceiver= new BroadCastReceiver(this);
+
+    protected void onStart(){
+        super.onStart();
+        IntentFilter intentFilter = new IntentFilter(ConnectivityManager.CONNECTIVITY_ACTION);
+        registerReceiver(broadCastReceiver,intentFilter);
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        unregisterReceiver(broadCastReceiver);
+    }
+
 
 }
