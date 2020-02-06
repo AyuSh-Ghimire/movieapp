@@ -2,7 +2,10 @@ package com.example.ecosmetics;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.hardware.Sensor;
+import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -12,6 +15,7 @@ import android.widget.Toast;
 
 import com.example.ecosmetics.API.LoginAPI;
 import com.example.ecosmetics.Model.User;
+import com.example.ecosmetics.Sensor.ShakeDetector;
 import com.example.ecosmetics.URL.url;
 import com.example.ecosmetics.serverresponse.SignUpResponse;
 
@@ -23,6 +27,10 @@ public class SignupActivity extends AppCompatActivity {
     private EditText etfirstname, etlastname, etaddress, etphoneno, etemail, etusername, etpassword, etconfirmpassword;
     private Button btnsignup;
     private TextView txtlogin;
+    private ShakeDetector mShakeDetector;
+    private SensorManager mSensorManager;
+    private Sensor mAccelerometer;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +47,25 @@ public class SignupActivity extends AppCompatActivity {
         etconfirmpassword = findViewById(R.id.confirmpassword);
         btnsignup = findViewById(R.id.btnsignup);
         txtlogin = findViewById(R.id.txtlogin);
+
+
+        mSensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
+        mAccelerometer = mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+        mShakeDetector = new ShakeDetector(new ShakeDetector.OnShakeListener() {
+            @Override
+            public void onShake() {
+
+                etfirstname.setText("");
+                etlastname.setText("");
+                etaddress.setText("");
+                etphoneno.setText("");
+                etemail.setText("");
+                etusername.setText("");
+                etpassword.setText("");
+                etconfirmpassword.setText("");
+
+            }
+        });
         txtlogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -64,6 +91,17 @@ public class SignupActivity extends AppCompatActivity {
         });
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        mSensorManager.registerListener(mShakeDetector, mAccelerometer, SensorManager.SENSOR_DELAY_UI);
+    }
+
+    @Override
+    protected void onPause() {
+        mSensorManager.unregisterListener(mShakeDetector);
+        super.onPause();
+    }
 
     private void signUp() {
         String Firstname = etfirstname.getText().toString();

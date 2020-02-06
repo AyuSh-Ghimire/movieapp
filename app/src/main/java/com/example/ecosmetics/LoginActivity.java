@@ -6,6 +6,7 @@ import androidx.core.app.NotificationManagerCompat;
 
 import android.app.AlertDialog;
 import android.app.Notification;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
@@ -55,6 +56,8 @@ public class LoginActivity extends AppCompatActivity {
         notificationManagerCompat = NotificationManagerCompat.from(this);
         CreateChannel channel = new CreateChannel(this);
         channel.createChannel();
+        proximity();
+        sensorLight();
 
         etusername=findViewById(R.id.username);
         etpassword=findViewById(R.id.password);
@@ -62,7 +65,7 @@ public class LoginActivity extends AppCompatActivity {
         btnloginwithfb=findViewById(R.id.btnLoginWithFb);
         btnsignup=findViewById(R.id.btnSignup);
         forgetpassword=findViewById(R.id.txtforgetpassword);
-        //sensorGyro();
+        sensorGyro();
 
         btnloginwithfb.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -95,37 +98,75 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
-//    private void sensorGyro() {
-//
-//        sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
-//        Sensor sensor = sensorManager.getDefaultSensor(Sensor.TYPE_GYROSCOPE);
-//
-//        SensorEventListener sensorEventListener = new SensorEventListener() {
-//            @Override
-//            public void onSensorChanged(SensorEvent event) {
-//
-//                if (event.values[1] < 0) {
-//                    login();
-//                    finish();
-//
-//                } else if (event.values[1] > 0) {
-//
-//                }
-//            }
-//
-//            @Override
-//            public void onAccuracyChanged(Sensor sensor, int accuracy) {
-//
-//            }
-//        };
-//
-//        if (sensor != null) {
-//            sensorManager.registerListener(sensorEventListener, sensor, SensorManager.SENSOR_DELAY_NORMAL);
-//
-//        } else {
-//            Toast.makeText(this, "No sensor found", Toast.LENGTH_SHORT).show();
-//        }
-//    }
+    private void sensorLight() {
+        sensorManager=(SensorManager)getSystemService(SENSOR_SERVICE);
+        Sensor sensor= sensorManager.getDefaultSensor(Sensor.TYPE_LIGHT);
+        SensorEventListener sensorEventListener= new SensorEventListener() {
+            @Override
+            public void onSensorChanged(SensorEvent event) {
+                if(event.sensor.getType()==Sensor.TYPE_LIGHT){
+                    Toast.makeText(LoginActivity.this,"onSensor Change:" + event.values[0], Toast.LENGTH_SHORT).show();
+
+                }
+            }
+
+            @Override
+            public void onAccuracyChanged(Sensor sensor, int accuracy) {
+
+            }
+        };
+        sensorManager.registerListener(sensorEventListener,sensor,SensorManager.SENSOR_DELAY_NORMAL);
+    }
+
+    private void proximity() {
+        sensorManager = (SensorManager)getSystemService(Context.SENSOR_SERVICE);
+        Sensor sensor=sensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY);
+        SensorEventListener sensorEventListener= new SensorEventListener() {
+            @Override
+            public void onSensorChanged(SensorEvent event) {
+                if (event.values[0]<=4){
+                    // lout();
+                }
+            }
+
+            @Override
+            public void onAccuracyChanged(Sensor sensor, int accuracy) {
+
+            }
+        };
+    }
+
+    private void sensorGyro() {
+
+        sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
+        Sensor sensor = sensorManager.getDefaultSensor(Sensor.TYPE_GYROSCOPE);
+
+        SensorEventListener sensorEventListener = new SensorEventListener() {
+            @Override
+            public void onSensorChanged(SensorEvent event) {
+
+                if (event.values[1] < 0) {
+                    login();
+                    finish();
+
+                } else if (event.values[1] > 0) {
+
+                }
+            }
+
+            @Override
+            public void onAccuracyChanged(Sensor sensor, int accuracy) {
+
+            }
+        };
+
+        if (sensor != null) {
+            sensorManager.registerListener(sensorEventListener, sensor, SensorManager.SENSOR_DELAY_NORMAL);
+
+        } else {
+            Toast.makeText(this, "No sensor found", Toast.LENGTH_SHORT).show();
+        }
+    }
 
 
     private void login(){
@@ -154,13 +195,13 @@ public class LoginActivity extends AppCompatActivity {
             Toast.makeText(this, "Either username or password is incorrect", Toast.LENGTH_SHORT).show();
             etusername.requestFocus();
             Vibrator vibrator=(Vibrator) getSystemService(VIBRATOR_SERVICE);
-            vibrator.vibrate(2000);
+            vibrator.vibrate(5000);
         }
     }
     private void notifiy() {
         Notification notification = new NotificationCompat.Builder(this, CreateChannel.CHANNEL_1)
                 .setSmallIcon(R.drawable.ic_shopping_cart_black_24dp)
-                .setContentTitle("My E-Cosmetics")
+                .setContentTitle("My E-Cosmetics app")
                 .setContentText("Login success :" + etusername.getText().toString())
                 .setCategory(NotificationCompat.CATEGORY_MESSAGE)
                 .build();
