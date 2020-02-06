@@ -131,6 +131,10 @@ public class DashboardActivity extends AppCompatActivity implements NavigationVi
               Intent openeditprofile =new Intent(DashboardActivity.this, EditProfileActivity.class);
               startActivity(openeditprofile);
                 break;
+            case  R.id.Maps:
+                Intent openmaps =new Intent(DashboardActivity.this, MapsActivity.class);
+                startActivity(openmaps);
+                break;
             case  R.id.Logout:
                 logout();
                 break;

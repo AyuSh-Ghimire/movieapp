@@ -62,7 +62,7 @@ public class LoginActivity extends AppCompatActivity {
         btnloginwithfb=findViewById(R.id.btnLoginWithFb);
         btnsignup=findViewById(R.id.btnSignup);
         forgetpassword=findViewById(R.id.txtforgetpassword);
-        sensorGyro();
+        //sensorGyro();
 
         btnloginwithfb.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -95,37 +95,37 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
-    private void sensorGyro() {
-
-        sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
-        Sensor sensor = sensorManager.getDefaultSensor(Sensor.TYPE_GYROSCOPE);
-
-        SensorEventListener sensorEventListener = new SensorEventListener() {
-            @Override
-            public void onSensorChanged(SensorEvent event) {
-
-                if (event.values[1] < 0) {
-                    login();
-                    finish();
-
-                } else if (event.values[1] > 0) {
-
-                }
-            }
-
-            @Override
-            public void onAccuracyChanged(Sensor sensor, int accuracy) {
-
-            }
-        };
-
-        if (sensor != null) {
-            sensorManager.registerListener(sensorEventListener, sensor, SensorManager.SENSOR_DELAY_NORMAL);
-
-        } else {
-            Toast.makeText(this, "No sensor found", Toast.LENGTH_SHORT).show();
-        }
-    }
+//    private void sensorGyro() {
+//
+//        sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
+//        Sensor sensor = sensorManager.getDefaultSensor(Sensor.TYPE_GYROSCOPE);
+//
+//        SensorEventListener sensorEventListener = new SensorEventListener() {
+//            @Override
+//            public void onSensorChanged(SensorEvent event) {
+//
+//                if (event.values[1] < 0) {
+//                    login();
+//                    finish();
+//
+//                } else if (event.values[1] > 0) {
+//
+//                }
+//            }
+//
+//            @Override
+//            public void onAccuracyChanged(Sensor sensor, int accuracy) {
+//
+//            }
+//        };
+//
+//        if (sensor != null) {
+//            sensorManager.registerListener(sensorEventListener, sensor, SensorManager.SENSOR_DELAY_NORMAL);
+//
+//        } else {
+//            Toast.makeText(this, "No sensor found", Toast.LENGTH_SHORT).show();
+//        }
+//    }
 
 
     private void login(){
