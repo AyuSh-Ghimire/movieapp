@@ -127,7 +127,7 @@ public class DashboardActivity extends AppCompatActivity implements NavigationVi
             case R.id.Cart:
                 getSupportFragmentManager().beginTransaction().replace(R.id.framelayout,new CartFragment()).commit();
                 break;
-            case  R.id.Editprofile:
+            case  R.id.Userprofile:
               Intent openeditprofile =new Intent(DashboardActivity.this, EditProfileActivity.class);
               startActivity(openeditprofile);
                 break;
