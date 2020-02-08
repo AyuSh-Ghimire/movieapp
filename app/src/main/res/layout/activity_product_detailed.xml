@@ -10,7 +10,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_margin="10dp"
-    android:padding="10dp">
+    android:padding="1dp">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -19,8 +19,8 @@
         android:orientation="vertical">
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/productimg"
-            android:layout_width="125dp"
-            android:layout_height="170dp"
+            android:layout_width="230dp"
+            android:layout_height="210dp"
             android:background="@color/probg"
             android:scaleType="centerCrop"/>
 
@@ -39,6 +39,7 @@
             android:layout_height="wrap_content"
             android:text="Description"
             android:padding="8dp"
+            android:fontFamily="serif"
             android:layout_marginTop="10dp"/>
         <TextView
             android:id="@+id/prorate"
@@ -47,8 +48,23 @@
             android:text="Rate"
             android:background="#edecec"
             android:padding="8dp"
+            android:fontFamily="serif"
             android:layout_marginTop="10dp"/>
+
+        <Button
+            android:id="@+id/btnaddcart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:background="@color/white"
+            android:text="ADD CART"
+            android:fontFamily="serif"
+            android:textColor="#ffff"
+            android:textSize="16dp" />
+
+
     </LinearLayout>
+
 
 </androidx.core.widget.NestedScrollView>
 
