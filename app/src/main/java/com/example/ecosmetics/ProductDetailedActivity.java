@@ -2,11 +2,15 @@ package com.example.ecosmetics;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 
+import com.example.ecosmetics.Model.Product;
 import com.example.ecosmetics.URL.url;
 
 import java.io.InputStream;
@@ -22,6 +26,9 @@ public class ProductDetailedActivity extends AppCompatActivity {
     CircleImageView product_img;
     String product_image;
 
+    private Button btnaddcart;
+
+
     private TextView textViewName, textViewDesc, textViewRate;
 
     @Override
@@ -33,6 +40,15 @@ public class ProductDetailedActivity extends AppCompatActivity {
         textViewName = findViewById(R.id.proname);
         textViewDesc = findViewById(R.id.prodesc);
         textViewRate = findViewById(R.id.prorate);
+
+        btnaddcart=findViewById(R.id.btnaddcart);
+        btnaddcart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent opencart = new Intent(ProductDetailedActivity.this,CartActivity.class);
+                startActivity(opencart);
+            }
+        });
         Bundle extras = getIntent().getExtras();
         if(extras!=null){
 
