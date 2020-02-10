@@ -26,7 +26,9 @@ import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
+import static com.example.ecosmetics.CartActivity.lstproduct;
 
+import static com.example.ecosmetics.strictmode.StrictModeClass.StrictMode;
 
 public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductViewHolder> {
 

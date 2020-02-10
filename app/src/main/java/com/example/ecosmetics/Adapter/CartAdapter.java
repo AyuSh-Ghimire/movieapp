@@ -1,8 +1,6 @@
 package com.example.ecosmetics.Adapter;
 
 import android.content.Context;
-import android.graphics.BitmapFactory;
-import android.os.StrictMode;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,66 +11,48 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.cepheuen.elegantnumberbutton.view.ElegantNumberButton;
-import com.example.ecosmetics.Model.CartModel;
 import com.example.ecosmetics.Model.Product;
 import com.example.ecosmetics.R;
-import com.example.ecosmetics.URL.url;
 
-import java.io.InputStream;
-import java.net.URL;
 import java.util.List;
 
-
-
 public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder> {
-    CartAdapter a = this;
     Context context;
-    List<CartModel> cartModels;
-
-    public CartAdapter(Context context, List<CartModel> cartModels) {
-        this.context = context;
-        this.cartModels = cartModels;
-    }
-
+    List<Product> productList;
     @NonNull
     @Override
     public CartViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view= LayoutInflater.from(context).inflate(R.layout.activity_cart,parent,false);
+        View itemView= LayoutInflater.from(context).inflate(R.layout.activity_cart,parent,false);
 
-        return new CartViewHolder(view);
+        return new CartViewHolder(itemView);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull CartViewHolder cartViewHolder, int position) {
-
-     final CartModel model = cartModels.get(position);
-    cartViewHolder.txt_productname.setText(lstpro.get(position).getProductname());
-    cartViewHolder.txt_productdesc.setText(lstpro.get(position).getProductdesc());
-    cartViewHolder.txt_productrate.setText(new StringBuilder("Rs").append(lstpro.get(position).getRate()));
-    cartViewHolder.txtquantity.setNumber(String.valueOf(lstpro.get(position).getQuantity()));
-        String imgPath = url.BASE_URL + "uploads/" + lstpro.get(position).getProductimg();
-        StrictMode();
-        try {
-            URL url=new URL(imgPath);
-            cartViewHolder.img_product.setImageBitmap(BitmapFactory.decodeStream((InputStream) url.getContent()));
-        } catch (Exception e) {
-        }
+    public void onBindViewHolder(@NonNull CartViewHolder holder, int position) {
+        //holder.img_product.setImageResource(productList.get(position).getProductimg());
+        holder.txt_productname.setText(productList.get(position).getProductname());
+        holder.txt_productdesc.setText(productList.get(position).getProductdesc());
+        holder.txt_productrate.setText(new StringBuilder("Rs").append(productList.get(position).getRate()));
+        holder.txtquantity.setNumber(String.valueOf(productList.get(position).getQuantity()));
+//        holder.txtquantity.setOnValueChangeListener(new ElegantNumberButton.OnValueChangeListener() {
+//            @Override
+//            public void onValueChange(ElegantNumberButton view, int oldValue, int newValue) {
+//                Product cart= productList.get(position);
+//                cart.quantity= newValue;
+//                Common.cartRepository.updateCart(cart);
+//            }
+//        });
     }
 
     @Override
     public int getItemCount() {
-        return cartModels.size();
-    }
-    private void StrictMode() {
-        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
-        StrictMode.setThreadPolicy(policy);
+        return productList.size();
     }
 
     public class CartViewHolder extends RecyclerView.ViewHolder{
         ImageView img_product;
         TextView txt_productname, txt_productdesc,txt_productrate;
         ElegantNumberButton txtquantity;
-        View view;
 
         public CartViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -82,9 +62,6 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
             txt_productrate=(TextView)itemView.findViewById(R.id.txtcprate);
             txtquantity=(ElegantNumberButton) itemView.findViewById(R.id.txtquantity);
 
-        }
-        public View getView(){
-            return view;
         }
     }
 }
