@@ -13,6 +13,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.SearchView;
 import android.widget.Toast;
 
 import com.example.ecosmetics.API.CategoryAPI;
@@ -25,14 +26,14 @@ import com.example.ecosmetics.Model.Product;
 import com.example.ecosmetics.R;
 import com.example.ecosmetics.URL.url;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-import static com.example.ecosmetics.DashboardActivity.lstcat;
-import static com.example.ecosmetics.DashboardActivity.lstpro;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -46,18 +47,74 @@ public class DashboardFragment extends Fragment {
         // Required empty public constructor
     }
     private RecyclerView procat_recyclerview, rv_product;
+    SearchView searchView;
+    private List<Category> lstcat= new ArrayList<>();
+    private List<Product> lstpro =new ArrayList<>();
+    private List<Product> SearchProductList = new ArrayList<Product>();
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-       View view = inflater.inflate(R.layout.fragment_dashboard, container, false);
-       context =getContext();
+        View view = inflater.inflate(R.layout.fragment_dashboard, container, false);
+        context =getContext();
 
-       procat_recyclerview=view.findViewById(R.id.procat_recyclerview);
+        procat_recyclerview=view.findViewById(R.id.procat_recyclerview);
         procat_recyclerview.setLayoutManager(new LinearLayoutManager(getContext(),RecyclerView.HORIZONTAL,false));
+        searchView = view.findViewById(R.id.search);
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
 
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                if(newText.isEmpty()){
+                    SearchProductList = lstpro;
+
+                }
+                else{
+                    SearchProductList = new ArrayList<>();
+                    for(Product product:lstpro){
+                        if(product.getProductname().contains(newText)){
+                            SearchProductList.add(product);
+                        }
+                    }
+                }
+                ProductAdapter adapter = new ProductAdapter(context,SearchProductList);
+                rv_product.setAdapter(adapter);
+                return false;
+            }
+
+        });
+//      searchView=view.findViewById(R.id.search);
+//        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+//            @Override
+//            public boolean onQueryTextSubmit(String query) {
+//                return false;
+//            }
+//
+//            @Override
+//            public boolean onQueryTextChange(String newText) {
+//               if(newText.isEmpty()){
+//                   SearchProductList = lstpro;
+//
+//               }
+//               else{
+//                   SearchProductList = new ArrayList<>();
+//                   for(Product product:lstpro){
+//                       if(product.getProductname().contains(newText)){
+//                           SearchProductList.add(product);
+//                       }
+//                   }
+//               }
+//               ProductAdapter adapter = new ProductAdapter(context,SearchProductList);
+//               rv_product.setAdapter(adapter);
+//               return false;
+//            }
+//        });
 
         rv_product=view.findViewById(R.id.pro_recyclerview);
         rv_product.setLayoutManager(new GridLayoutManager(getContext(),3));
@@ -90,6 +147,7 @@ public class DashboardFragment extends Fragment {
             public void onResponse(Call<List<Product>> call, Response<List<Product>> response) {
                 //Toast.makeText(context,"Product fetched", Toast.LENGTH_SHORT).show();
                 lstpro = response.body();
+                SearchProductList = lstpro;
                 ProductAdapter pa = new ProductAdapter(context,lstpro);
                 rv_product.setAdapter(pa);
             }

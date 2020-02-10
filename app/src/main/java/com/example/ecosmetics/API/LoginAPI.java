@@ -22,7 +22,7 @@ import retrofit2.http.POST;
     Call<SignUpResponse>register(@Body User regUser);
 
     @GET("users/me")
-        Call<User> getUserDetails(@Header("authorization")String token);
+    Call<User> getUserDetails(@Header("authorization")String token);
 
 
 }
