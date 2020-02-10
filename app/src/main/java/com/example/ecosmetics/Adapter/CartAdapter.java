@@ -22,8 +22,7 @@ import java.io.InputStream;
 import java.net.URL;
 import java.util.List;
 
-import static com.example.ecosmetics.DashboardActivity.lstpro;
-import static com.example.ecosmetics.strictmode.StrictModeClass.StrictMode;
+
 
 public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder> {
     CartAdapter a = this;
