@@ -41,8 +41,7 @@ public class DashboardActivity extends AppCompatActivity implements NavigationVi
     private ActionBarDrawerToggle mToggle;
     private Toolbar toolbar;
     private FrameLayout frameLayout;
-    public static List<Category> lstcat= new ArrayList<>();
-    public static List<Product> lstpro =new ArrayList<>();
+
     private static final String TAG = "DashboardActivity";
 
     private TextView hloginusername;
@@ -56,14 +55,14 @@ public class DashboardActivity extends AppCompatActivity implements NavigationVi
         getSupportActionBar().hide();
 
 
-           mDrawerLayout= findViewById(R.id.drawyerlayout);
-            Toolbar toolbar = findViewById(R.id.app_cart);
-            NavigationView nv = findViewById(R.id.navigationview);
+        mDrawerLayout= findViewById(R.id.drawyerlayout);
+        Toolbar toolbar = findViewById(R.id.app_cart);
+        NavigationView nv = findViewById(R.id.navigationview);
 
-            View headerView= LayoutInflater.from(context).inflate(R.layout.sideheader,null);
-            nv.addHeaderView(headerView);
-            hloginusername = headerView.findViewById(R.id.loginusername);
-            hloginemail = headerView.findViewById(R.id.loginemail);
+        View headerView= LayoutInflater.from(context).inflate(R.layout.sideheader,null);
+        nv.addHeaderView(headerView);
+        hloginusername = headerView.findViewById(R.id.loginusername);
+        hloginemail = headerView.findViewById(R.id.loginemail);
 
         LoginAPI api = url.getInstance().create(LoginAPI.class);
         Call<User> getuserdetails = api.getUserDetails(url.token);
@@ -80,31 +79,31 @@ public class DashboardActivity extends AppCompatActivity implements NavigationVi
 
             }
         });
-            nv.setNavigationItemSelectedListener(this);
-            toolbar.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent i=new Intent(DashboardActivity.this, CartActivity.class);
-                    startActivity(i);
-                }
-            });
-           mToggle= new ActionBarDrawerToggle(this, mDrawerLayout,toolbar,R.string.open,R.string.close);
+        nv.setNavigationItemSelectedListener(this);
+        toolbar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i=new Intent(DashboardActivity.this, CartActivity.class);
+                startActivity(i);
+            }
+        });
+        mToggle= new ActionBarDrawerToggle(this, mDrawerLayout,toolbar,R.string.open,R.string.close);
 
-            mDrawerLayout.addDrawerListener(mToggle);
-            mToggle.syncState();
+        mDrawerLayout.addDrawerListener(mToggle);
+        mToggle.syncState();
 
-            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-            frameLayout=findViewById(R.id.framelayout);
-            setFragment(new DashboardFragment());
+        frameLayout=findViewById(R.id.framelayout);
+        setFragment(new DashboardFragment());
+    }
+
+    public boolean onOptionsItemSelected(MenuItem item){
+        if(mToggle.onOptionsItemSelected(item)){
+            return true;
         }
 
-        public boolean onOptionsItemSelected(MenuItem item){
-            if(mToggle.onOptionsItemSelected(item)){
-                return true;
-            }
-
-            return super.onOptionsItemSelected(item);
+        return super.onOptionsItemSelected(item);
     }
 
     public void setFragment(Fragment fragment){
@@ -128,8 +127,8 @@ public class DashboardActivity extends AppCompatActivity implements NavigationVi
                 getSupportFragmentManager().beginTransaction().replace(R.id.framelayout,new CartFragment()).commit();
                 break;
             case  R.id.Userprofile:
-              Intent openeditprofile =new Intent(DashboardActivity.this, EditProfileActivity.class);
-              startActivity(openeditprofile);
+                Intent openeditprofile =new Intent(DashboardActivity.this, EditProfileActivity.class);
+                startActivity(openeditprofile);
                 break;
             case  R.id.Maps:
                 Intent openmaps =new Intent(DashboardActivity.this, MapsActivity.class);
