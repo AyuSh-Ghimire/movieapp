@@ -56,7 +56,7 @@ public class LoginActivity extends AppCompatActivity {
         notificationManagerCompat = NotificationManagerCompat.from(this);
         CreateChannel channel = new CreateChannel(this);
         channel.createChannel();
-        proximity();
+
         sensorLight();
 
         etusername=findViewById(R.id.username);
@@ -118,23 +118,7 @@ public class LoginActivity extends AppCompatActivity {
         sensorManager.registerListener(sensorEventListener,sensor,SensorManager.SENSOR_DELAY_NORMAL);
     }
 
-    private void proximity() {
-        sensorManager = (SensorManager)getSystemService(Context.SENSOR_SERVICE);
-        Sensor sensor=sensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY);
-        SensorEventListener sensorEventListener= new SensorEventListener() {
-            @Override
-            public void onSensorChanged(SensorEvent event) {
-                if (event.values[0]<=4){
-                    // lout();
-                }
-            }
 
-            @Override
-            public void onAccuracyChanged(Sensor sensor, int accuracy) {
-
-            }
-        };
-    }
 
     private void sensorGyro() {
 
@@ -209,31 +193,6 @@ public class LoginActivity extends AppCompatActivity {
         notificationManagerCompat.notify(1, notification);
     }
 
-//    @Override
-//    public void onBackPressed() {
-//        super.onBackPressed();
-//        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-//
-//        builder.setMessage("Are you sure you want to exit")
-//                .setCancelable(false)
-//                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-//                    @Override
-//                    public void onClick(DialogInterface dialog, int which) {
-//                        finish();
-//                        System.exit(0);
-//                    }
-//                })
-//
-//                .setNegativeButton("No", new DialogInterface.OnClickListener() {
-//                    @Override
-//                    public void onClick(DialogInterface dialog, int which) {
-//                        dialog.cancel();
-//                    }
-//                });
-//
-//        AlertDialog alertDialog = builder.create();
-//        alertDialog.show();
-//    }
 
     BroadCastReceiver broadCastReceiver= new BroadCastReceiver(this);
 

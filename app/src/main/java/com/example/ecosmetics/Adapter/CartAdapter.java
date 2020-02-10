@@ -11,6 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.cepheuen.elegantnumberbutton.view.ElegantNumberButton;
+import com.example.ecosmetics.Model.CartModel;
 import com.example.ecosmetics.Model.Product;
 import com.example.ecosmetics.R;
 
@@ -18,35 +19,35 @@ import java.util.List;
 
 public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder> {
     Context context;
-    List<Product> productList;
+    List<CartModel> cartModels;
+
+    public CartAdapter(Context context, List<CartModel> cartModels) {
+        this.context = context;
+        this.cartModels = cartModels;
+    }
+
     @NonNull
     @Override
     public CartViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View itemView= LayoutInflater.from(context).inflate(R.layout.activity_cart,parent,false);
+        View view= LayoutInflater.from(context).inflate(R.layout.activity_cart,parent,false);
 
-        return new CartViewHolder(itemView);
+        return new CartViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull CartViewHolder holder, int position) {
-    //holder.img_product.setImageResource(productList.get(position).getProductimg());
-    holder.txt_productname.setText(productList.get(position).getProductname());
-    holder.txt_productdesc.setText(productList.get(position).getProductdesc());
-    holder.txt_productrate.setText(new StringBuilder("Rs").append(productList.get(position).getRate()));
-    holder.txtquantity.setNumber(String.valueOf(productList.get(position).getQuantity()));
-//        holder.txtquantity.setOnValueChangeListener(new ElegantNumberButton.OnValueChangeListener() {
-//            @Override
-//            public void onValueChange(ElegantNumberButton view, int oldValue, int newValue) {
-//                Product cart= productList.get(position);
-//                cart.quantity= newValue;
-//                Common.cartRepository.updateCart(cart);
-//            }
-//        });
+    public void onBindViewHolder(@NonNull CartViewHolder cartViewHolder, int position) {
+
+        final CartModel model = cartModels.get(position);
+    cartViewHolder.txt_productname.setText(cartModels.get(position).getProductname());
+    cartViewHolder.txt_productdesc.setText(cartModels.get(position).getProductdesc());
+    cartViewHolder.txt_productrate.setText(new StringBuilder("Rs").append(cartModels.get(position).getRate()));
+    cartViewHolder.txtquantity.setNumber(String.valueOf(cartModels.get(position).getQuantity()));
+
     }
 
     @Override
     public int getItemCount() {
-        return productList.size();
+        return cartModels.size();
     }
 
     public class CartViewHolder extends RecyclerView.ViewHolder{
