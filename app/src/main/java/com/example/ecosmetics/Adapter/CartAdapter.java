@@ -19,10 +19,12 @@ import java.util.List;
 
 public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder> {
     Context context;
-    List<Product> productList;
+    List<CartModel> cartModels;
+    CartAdapter a = this;
 
     public CartAdapter(Context context, List<CartModel> cartModels) {
-
+        this.context = context;
+        this.cartModels = cartModels;
     }
 
     @NonNull
