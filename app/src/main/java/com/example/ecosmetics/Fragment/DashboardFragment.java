@@ -89,32 +89,7 @@ public class DashboardFragment extends Fragment {
             }
 
         });
-//      searchView=view.findViewById(R.id.search);
-//        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-//            @Override
-//            public boolean onQueryTextSubmit(String query) {
-//                return false;
-//            }
-//
-//            @Override
-//            public boolean onQueryTextChange(String newText) {
-//               if(newText.isEmpty()){
-//                   SearchProductList = lstpro;
-//
-//               }
-//               else{
-//                   SearchProductList = new ArrayList<>();
-//                   for(Product product:lstpro){
-//                       if(product.getProductname().contains(newText)){
-//                           SearchProductList.add(product);
-//                       }
-//                   }
-//               }
-//               ProductAdapter adapter = new ProductAdapter(context,SearchProductList);
-//               rv_product.setAdapter(adapter);
-//               return false;
-//            }
-//        });
+
 
         rv_product=view.findViewById(R.id.pro_recyclerview);
         rv_product.setLayoutManager(new GridLayoutManager(getContext(),3));

@@ -36,12 +36,13 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
     }
 
     @Override
-    public void onBindViewHolder(@NonNull CartViewHolder holder, int position) {
-        //holder.img_product.setImageResource(productList.get(position).getProductimg());
-        holder.txt_productname.setText(productList.get(position).getProductname());
-        holder.txt_productdesc.setText(productList.get(position).getProductdesc());
-        holder.txt_productrate.setText(new StringBuilder("Rs").append(productList.get(position).getRate()));
-        holder.txtquantity.setNumber(String.valueOf(productList.get(position).getQuantity()));
+    public void onBindViewHolder(@NonNull CartViewHolder cartViewHolder, int position) {
+        final CartModel model = cartModels.get(position);
+        cartViewHolder.img_product.setImageResource(productList.get(position).getProductimg());
+        cartViewHolder.txt_productname.setText(cartModels.get(position).getProductname());
+        cartViewHolder.txt_productdesc.setText(cartModels.get(position).getProductdesc());
+        cartViewHolder.txt_productrate.setText(new StringBuilder("Rs").append(cartModels.get(position).getRate()));
+        cartViewHolder.txtquantity.setNumber(String.valueOf(cartModels.get(position).getQuantity()));
 //        holder.txtquantity.setOnValueChangeListener(new ElegantNumberButton.OnValueChangeListener() {
 //            @Override
 //            public void onValueChange(ElegantNumberButton view, int oldValue, int newValue) {
@@ -54,7 +55,7 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
 
     @Override
     public int getItemCount() {
-        return productList.size();
+        return cartModels.size();
     }
 
     public class CartViewHolder extends RecyclerView.ViewHolder{
@@ -62,13 +63,14 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
         TextView txt_productname, txt_productdesc,txt_productrate;
         ElegantNumberButton txtquantity;
 
-        public CartViewHolder(@NonNull View itemView) {
-            super(itemView);
-            img_product=(ImageView)itemView.findViewById(R.id.cartimgproduct);
-            txt_productname=(TextView)itemView.findViewById(R.id.txtcproname);
-            txt_productdesc=(TextView)itemView.findViewById(R.id.txtcprodesc);
-            txt_productrate=(TextView)itemView.findViewById(R.id.txtcprate);
-            txtquantity=(ElegantNumberButton) itemView.findViewById(R.id.txtquantity);
+        public CartViewHolder(@NonNull View cartView) {
+            super(cartView);
+
+            img_product=(ImageView)cartView.findViewById(R.id.cartimgproduct);
+            txt_productname=(TextView)cartView.findViewById(R.id.txtcproname);
+            txt_productdesc=(TextView)cartView.findViewById(R.id.txtcprodesc);
+            txt_productrate=(TextView)cartView.findViewById(R.id.txtcprate);
+            txtquantity=(ElegantNumberButton) cartView.findViewById(R.id.txtquantity);
 
         }
     }
