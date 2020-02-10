@@ -11,6 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.cepheuen.elegantnumberbutton.view.ElegantNumberButton;
+import com.example.ecosmetics.Model.CartModel;
 import com.example.ecosmetics.Model.Product;
 import com.example.ecosmetics.R;
 
@@ -19,6 +20,11 @@ import java.util.List;
 public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder> {
     Context context;
     List<Product> productList;
+
+    public CartAdapter(Context context, List<CartModel> cartModels) {
+
+    }
+
     @NonNull
     @Override
     public CartViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
