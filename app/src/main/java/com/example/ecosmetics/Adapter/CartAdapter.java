@@ -61,9 +61,9 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
         cartViewHolder.txtquantity.setOnValueChangeListener(new ElegantNumberButton.OnValueChangeListener() {
             @Override
             public void onValueChange(ElegantNumberButton view, int oldValue, int newValue) {
-                Product cart= cartModels.get();
-                cart.getQuantity()= newValue;
-                Common.cartRepository.updateCart(cart);
+//                Product cart= cartModels.get();
+//                cart.getQuantity()= newValue;
+//                Common.cartRepository.updateCart(cart);
             }
       });
     }

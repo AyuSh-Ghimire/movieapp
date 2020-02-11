@@ -122,7 +122,6 @@ public class DashboardActivity extends AppCompatActivity implements NavigationVi
                 getSupportFragmentManager().beginTransaction().replace(R.id.framelayout,new DashboardFragment()).commit();
 
                 break;
-
             case R.id.Cart:
                 Intent opencart =new Intent(DashboardActivity.this, CartActivity.class);
                 startActivity(opencart);

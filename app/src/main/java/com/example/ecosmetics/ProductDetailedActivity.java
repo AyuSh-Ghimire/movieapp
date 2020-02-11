@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 
+import com.cepheuen.elegantnumberbutton.view.ElegantNumberButton;
 import com.example.ecosmetics.Model.Product;
 import com.example.ecosmetics.URL.url;
 
@@ -17,6 +18,8 @@ import java.io.InputStream;
 import java.net.URL;
 
 import de.hdodenhof.circleimageview.CircleImageView;
+
+import static com.example.ecosmetics.strictmode.StrictModeClass.StrictMode;
 
 public class ProductDetailedActivity extends AppCompatActivity {
     private FrameLayout frameLayout;
@@ -27,9 +30,8 @@ public class ProductDetailedActivity extends AppCompatActivity {
     String product_image;
 
     private Button btnaddcart;
-
-
     private TextView textViewName, textViewDesc, textViewRate;
+    private ElegantNumberButton quantity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,13 +42,20 @@ public class ProductDetailedActivity extends AppCompatActivity {
         textViewName = findViewById(R.id.proname);
         textViewDesc = findViewById(R.id.prodesc);
         textViewRate = findViewById(R.id.prorate);
+        quantity =findViewById(R.id.product_detail_quantity);
+        quantity.getNumber();
 
         btnaddcart=findViewById(R.id.btnaddcart);
+
         btnaddcart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent opencart = new Intent(ProductDetailedActivity.this,CartActivity.class);
-                startActivity(opencart);
+                Intent intent = new Intent(ProductDetailedActivity.this, CartActivity.class);
+                intent.putExtra("textViewName",textViewName.getText().toString());
+                intent.putExtra("textViewRate",textViewRate.getText().toString());
+                intent.putExtra("product_img",product_image);
+                intent.putExtra("quantity",quantity.getNumber());
+                startActivity(intent);
             }
         });
         Bundle extras = getIntent().getExtras();
