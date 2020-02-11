@@ -2,7 +2,9 @@ package com.example.ecosmetics.Adapter;
 
 import android.content.Context;
 import android.graphics.BitmapFactory;
+import android.nfc.Tag;
 import android.os.StrictMode;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,6 +25,7 @@ import java.io.InputStream;
 import java.net.URL;
 import java.util.List;
 
+import static androidx.constraintlayout.widget.Constraints.TAG;
 import static com.example.ecosmetics.strictmode.StrictModeClass.StrictMode;
 
 public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder> {
@@ -46,8 +49,6 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
     @Override
     public void onBindViewHolder(@NonNull CartViewHolder cartViewHolder, int position) {
 
-
-
         cartViewHolder.txt_productname.setText(cartModels.get(position).getProductcart().getProductname());
         cartViewHolder.txt_productrate.setText(new StringBuilder("Rs").append(cartModels.get(position).getProductcart().getRate()));
         cartViewHolder.txtquantity.setNumber(String.valueOf(cartModels.get(position).getProductcart().getQuantity()));
@@ -64,6 +65,8 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
 //                Product cart= cartModels.get();
 //                cart.getQuantity()= newValue;
 //                Common.cartRepository.updateCart(cart);
+
+                Log.d(TAG, String.format("oldValue: %d   newValue: %d", oldValue, newValue));
             }
       });
     }

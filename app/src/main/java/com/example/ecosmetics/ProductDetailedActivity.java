@@ -43,8 +43,13 @@ public class ProductDetailedActivity extends AppCompatActivity {
         textViewDesc = findViewById(R.id.prodesc);
         textViewRate = findViewById(R.id.prorate);
         quantity =findViewById(R.id.product_detail_quantity);
+        quantity.setOnClickListener(new ElegantNumberButton.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String product_detail_quantity = quantity.getNumber();
+            }
+        });
         quantity.getNumber();
-
         btnaddcart=findViewById(R.id.btnaddcart);
 
         btnaddcart.setOnClickListener(new View.OnClickListener() {
