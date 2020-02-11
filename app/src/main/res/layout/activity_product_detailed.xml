@@ -48,8 +48,24 @@
             android:text="Rate"
             android:background="#edecec"
             android:padding="8dp"
+            android:textStyle="bold"
             android:fontFamily="serif"
             android:layout_marginTop="10dp"/>
+
+        <com.cepheuen.elegantnumberbutton.view.ElegantNumberButton
+            android:id="@+id/txtquantity"
+            android:layout_width="80dp"
+            android:layout_height="30dp"
+            android:layout_weight="2"
+            app:initialNumber="1"
+            android:layout_marginTop="5dp"
+            app:finalNumber="100"
+            app:backGroundColor="#fff"
+            app:textColor="@color/black"
+            app:textSize="10sp"
+            >
+
+        </com.cepheuen.elegantnumberbutton.view.ElegantNumberButton>
 
         <Button
             android:id="@+id/btnaddcart"

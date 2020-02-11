@@ -57,7 +57,7 @@ public class LoginActivity extends AppCompatActivity {
         CreateChannel channel = new CreateChannel(this);
         channel.createChannel();
 
-        sensorLight();
+        //sensorLight();
 
         etusername=findViewById(R.id.username);
         etpassword=findViewById(R.id.password);
@@ -97,26 +97,26 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
     }
-
-    private void sensorLight() {
-        sensorManager=(SensorManager)getSystemService(SENSOR_SERVICE);
-        Sensor sensor= sensorManager.getDefaultSensor(Sensor.TYPE_LIGHT);
-        SensorEventListener sensorEventListener= new SensorEventListener() {
-            @Override
-            public void onSensorChanged(SensorEvent event) {
-                if(event.sensor.getType()==Sensor.TYPE_LIGHT){
-                    Toast.makeText(LoginActivity.this,"onSensor Change:" + event.values[0], Toast.LENGTH_SHORT).show();
-
-                }
-            }
-
-            @Override
-            public void onAccuracyChanged(Sensor sensor, int accuracy) {
-
-            }
-        };
-        sensorManager.registerListener(sensorEventListener,sensor,SensorManager.SENSOR_DELAY_NORMAL);
-    }
+//
+//    private void sensorLight() {
+//        sensorManager=(SensorManager)getSystemService(SENSOR_SERVICE);
+//        Sensor sensor= sensorManager.getDefaultSensor(Sensor.TYPE_LIGHT);
+//        SensorEventListener sensorEventListener= new SensorEventListener() {
+//            @Override
+//            public void onSensorChanged(SensorEvent event) {
+//                if(event.sensor.getType()==Sensor.TYPE_LIGHT){
+//                    Toast.makeText(LoginActivity.this,"onSensor Change:" + event.values[0], Toast.LENGTH_SHORT).show();
+//
+//                }
+//            }
+//
+//            @Override
+//            public void onAccuracyChanged(Sensor sensor, int accuracy) {
+//
+//            }
+//        };
+//        sensorManager.registerListener(sensorEventListener,sensor,SensorManager.SENSOR_DELAY_NORMAL);
+//    }
 
 
 
@@ -170,9 +170,10 @@ public class LoginActivity extends AppCompatActivity {
         LoginBLL loginBLL = new LoginBLL();
         StrictModeClass.StrictMode();
         if (loginBLL.checkUser(username, password)) {
-            notifiy();
+
             Intent intent = new Intent(LoginActivity.this, DashboardActivity.class);
             startActivity(intent);
+            notifiy();
             finish();
 
         } else {
