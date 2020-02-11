@@ -60,7 +60,7 @@ public class CartFragment extends Fragment {
 
         SharedPreferences sharedPreferences=this.getActivity().getSharedPreferences("User",MODE_PRIVATE);
         String uid = sharedPreferences.getString("id","");
-        Call<List<CartModel>> listCall=api.getbyid(url.token,uid);
+        Call<List<CartModel>> listCall=api.getbyid(url.token);
 
         listCall.enqueue(new Callback<List<CartModel>>() {
             @Override

@@ -46,26 +46,26 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
     @Override
     public void onBindViewHolder(@NonNull CartViewHolder cartViewHolder, int position) {
 
-//        final CartModel model = cartModels.get(position);
 
-//        cartViewHolder.txt_productname.setText(model.getProductcart());
-//        cartViewHolder.txt_productrate.setText(new StringBuilder("Rs").append(model.getCproductrate()));
-//        cartViewHolder.txtquantity.setNumber(String.valueOf(model.getQuantity()));
-//        String imgPath = url.BASE_URL + "uploads/" + model.getCproductimg();
-//          StrictMode();
-//      try {
-//            URL url=new URL(imgPath);
-//            cartViewHolder.img_product.setImageBitmap(BitmapFactory.decodeStream((InputStream) url.getContent()));
-//        } catch (Exception e) {
-//        }
-//        cartViewHolder.txtquantity.setOnValueChangeListener(new ElegantNumberButton.OnValueChangeListener() {
-//            @Override
-//            public void onValueChange(ElegantNumberButton view, int oldValue, int newValue) {
-//                Product cart= model.get(position);
-//                cart.getQuantity()= newValue;
-//                Common.cartRepository.updateCart(cart);
-//            }
-//      });
+
+        cartViewHolder.txt_productname.setText(cartModels.get(position).getProductcart().getProductname());
+        cartViewHolder.txt_productrate.setText(new StringBuilder("Rs").append(cartModels.get(position).getProductcart().getRate()));
+        cartViewHolder.txtquantity.setNumber(String.valueOf(cartModels.get(position).getProductcart().getQuantity()));
+        String imgPath = url.BASE_URL + "uploads/" + cartModels.get(position).getProductcart().getProductimg();
+          StrictMode();
+      try {
+            URL url=new URL(imgPath);
+            cartViewHolder.img_product.setImageBitmap(BitmapFactory.decodeStream((InputStream) url.getContent()));
+        } catch (Exception e) {
+        }
+        cartViewHolder.txtquantity.setOnValueChangeListener(new ElegantNumberButton.OnValueChangeListener() {
+            @Override
+            public void onValueChange(ElegantNumberButton view, int oldValue, int newValue) {
+                Product cart= cartModels.get();
+                cart.getQuantity()= newValue;
+                Common.cartRepository.updateCart(cart);
+            }
+      });
     }
     private void StrictMode() {
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();

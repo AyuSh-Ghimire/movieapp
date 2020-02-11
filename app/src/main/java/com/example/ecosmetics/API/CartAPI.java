@@ -11,6 +11,6 @@ import retrofit2.http.Path;
 
 public interface CartAPI {
 
-    @GET("/users/cart/{uid}")
-    Call<List<CartModel>> getbyid(@Header("Authorization") String token, @Path("uid") String uid);
+    @GET("/users/cart")
+    Call<List<CartModel>> getbyid(@Header("Authorization") String token);
 }
