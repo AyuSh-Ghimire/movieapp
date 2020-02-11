@@ -30,7 +30,7 @@ app:cardElevation="8dp"
             android:layout_height="wrap_content"
             android:text="Product name"
             android:textSize="18sp"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/txtcprodesc"

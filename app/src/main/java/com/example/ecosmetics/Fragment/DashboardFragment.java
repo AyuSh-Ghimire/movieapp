@@ -4,6 +4,7 @@ package com.example.ecosmetics.Fragment;
 import android.content.Context;
 import android.os.Bundle;
 
+import androidx.appcompat.widget.SearchView;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -13,7 +14,6 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.SearchView;
 import android.widget.Toast;
 
 import com.example.ecosmetics.API.CategoryAPI;
@@ -47,7 +47,7 @@ public class DashboardFragment extends Fragment {
         // Required empty public constructor
     }
     private RecyclerView procat_recyclerview, rv_product;
-    SearchView searchView;
+   androidx.appcompat.widget.SearchView searchView;
     private List<Category> lstcat= new ArrayList<>();
     private List<Product> lstpro =new ArrayList<>();
     private List<Product> SearchProductList = new ArrayList<Product>();
@@ -62,7 +62,7 @@ public class DashboardFragment extends Fragment {
 
         procat_recyclerview=view.findViewById(R.id.procat_recyclerview);
         procat_recyclerview.setLayoutManager(new LinearLayoutManager(getContext(),RecyclerView.HORIZONTAL,false));
-        searchView = view.findViewById(R.id.search);
+        searchView=view.findViewById(R.id.search);
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
