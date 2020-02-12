@@ -32,6 +32,7 @@ public class ProductDetailedActivity extends AppCompatActivity {
     private Button btnaddcart;
     private TextView textViewName, textViewDesc, textViewRate;
     private ElegantNumberButton quantity;
+    String value = "0";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,10 +44,17 @@ public class ProductDetailedActivity extends AppCompatActivity {
         textViewDesc = findViewById(R.id.prodesc);
         textViewRate = findViewById(R.id.prorate);
         quantity =findViewById(R.id.product_detail_quantity);
-        quantity.setOnClickListener(new ElegantNumberButton.OnClickListener() {
+//        quantity.setOnClickListener(new ElegantNumberButton.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                String product_detail_quantity = quantity.getNumber();
+//            }
+//        });
+
+        quantity.setOnValueChangeListener(new ElegantNumberButton.OnValueChangeListener() {
             @Override
-            public void onClick(View view) {
-                String product_detail_quantity = quantity.getNumber();
+            public void onValueChange(ElegantNumberButton view, int oldValue, int newValue) {
+                value = String.valueOf(newValue);
             }
         });
         quantity.getNumber();
@@ -59,7 +67,7 @@ public class ProductDetailedActivity extends AppCompatActivity {
                 intent.putExtra("textViewName",textViewName.getText().toString());
                 intent.putExtra("textViewRate",textViewRate.getText().toString());
                 intent.putExtra("product_img",product_image);
-                intent.putExtra("quantity",quantity.getNumber());
+                intent.putExtra("quantity",value);
                 startActivity(intent);
             }
         });

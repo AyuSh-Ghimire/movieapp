@@ -93,7 +93,6 @@ public class CartAdapter extends RecyclerView.Adapter<CartAdapter.CartViewHolder
             img_product=(ImageView)cartView.findViewById(R.id.cartimgproduct);
             txt_productname=(TextView)cartView.findViewById(R.id.txtcproname);
             txt_productrate=(TextView)cartView.findViewById(R.id.txtcprate);
-            txtquantity=(ElegantNumberButton) cartView.findViewById(R.id.txtquantity);
 
         }
         public View getView(){
