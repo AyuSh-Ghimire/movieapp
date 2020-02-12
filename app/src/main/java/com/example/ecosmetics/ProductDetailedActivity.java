@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.cepheuen.elegantnumberbutton.view.ElegantNumberButton;
 import com.example.ecosmetics.Model.Product;
@@ -44,6 +45,7 @@ public class ProductDetailedActivity extends AppCompatActivity {
         textViewDesc = findViewById(R.id.prodesc);
         textViewRate = findViewById(R.id.prorate);
         quantity =findViewById(R.id.product_detail_quantity);
+
 //        quantity.setOnClickListener(new ElegantNumberButton.OnClickListener() {
 //            @Override
 //            public void onClick(View view) {

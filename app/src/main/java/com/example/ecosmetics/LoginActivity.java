@@ -65,7 +65,7 @@ public class LoginActivity extends AppCompatActivity {
         btnloginwithfb=findViewById(R.id.btnLoginWithFb);
         btnsignup=findViewById(R.id.btnSignup);
         forgetpassword=findViewById(R.id.txtforgetpassword);
-        sensorGyro();
+       // sensorGyro();
 
         btnloginwithfb.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -93,47 +93,20 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 login();
+                sensorLight();
 
             }
         });
     }
-//
-//    private void sensorLight() {
-//        sensorManager=(SensorManager)getSystemService(SENSOR_SERVICE);
-//        Sensor sensor= sensorManager.getDefaultSensor(Sensor.TYPE_LIGHT);
-//        SensorEventListener sensorEventListener= new SensorEventListener() {
-//            @Override
-//            public void onSensorChanged(SensorEvent event) {
-//                if(event.sensor.getType()==Sensor.TYPE_LIGHT){
-//                    Toast.makeText(LoginActivity.this,"onSensor Change:" + event.values[0], Toast.LENGTH_SHORT).show();
-//
-//                }
-//            }
-//
-//            @Override
-//            public void onAccuracyChanged(Sensor sensor, int accuracy) {
-//
-//            }
-//        };
-//        sensorManager.registerListener(sensorEventListener,sensor,SensorManager.SENSOR_DELAY_NORMAL);
-//    }
 
-
-
-    private void sensorGyro() {
-
-        sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
-        Sensor sensor = sensorManager.getDefaultSensor(Sensor.TYPE_GYROSCOPE);
-
-        SensorEventListener sensorEventListener = new SensorEventListener() {
+    private void sensorLight() {
+        sensorManager=(SensorManager)getSystemService(SENSOR_SERVICE);
+        Sensor sensor= sensorManager.getDefaultSensor(Sensor.TYPE_LIGHT);
+        SensorEventListener sensorEventListener= new SensorEventListener() {
             @Override
             public void onSensorChanged(SensorEvent event) {
-
-                if (event.values[1] < 0) {
-                    login();
-                    finish();
-
-                } else if (event.values[1] > 0) {
+                if(event.sensor.getType()==Sensor.TYPE_LIGHT){
+                    Toast.makeText(LoginActivity.this,"onSensor Change:" + event.values[0], Toast.LENGTH_SHORT).show();
 
                 }
             }
@@ -143,14 +116,42 @@ public class LoginActivity extends AppCompatActivity {
 
             }
         };
-
-        if (sensor != null) {
-            sensorManager.registerListener(sensorEventListener, sensor, SensorManager.SENSOR_DELAY_NORMAL);
-
-        } else {
-            Toast.makeText(this, "No sensor found", Toast.LENGTH_SHORT).show();
-        }
+        sensorManager.registerListener(sensorEventListener,sensor,SensorManager.SENSOR_DELAY_NORMAL);
     }
+
+
+
+//    private void sensorGyro() {
+//
+//        sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
+//        Sensor sensor = sensorManager.getDefaultSensor(Sensor.TYPE_GYROSCOPE);
+//
+//        SensorEventListener sensorEventListener = new SensorEventListener() {
+//            @Override
+//            public void onSensorChanged(SensorEvent event) {
+//
+//                if (event.values[1] < 0) {
+//                    login();
+//                    finish();
+//
+//                } else if (event.values[1] > 0) {
+//
+//                }
+//            }
+//
+//            @Override
+//            public void onAccuracyChanged(Sensor sensor, int accuracy) {
+//
+//            }
+//        };
+//
+//        if (sensor != null) {
+//            sensorManager.registerListener(sensorEventListener, sensor, SensorManager.SENSOR_DELAY_NORMAL);
+//
+//        } else {
+//            Toast.makeText(this, "No sensor found", Toast.LENGTH_SHORT).show();
+//        }
+//    }
 
 
     private void login(){

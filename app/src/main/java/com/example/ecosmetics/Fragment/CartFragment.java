@@ -33,7 +33,8 @@ import static android.content.Context.MODE_PRIVATE;
  */
 public class CartFragment extends Fragment {
     RecyclerView recycler_cart;
-    Button btnpro_order;
+    Button btnpro_order,btnback;
+
 
     public CartFragment() {
         // Required empty public constructor
@@ -49,7 +50,13 @@ public class CartFragment extends Fragment {
         recycler_cart= view.findViewById(R.id.recycart);
         recycler_cart.setLayoutManager(new LinearLayoutManager(getContext(),RecyclerView.HORIZONTAL,false));
         recycler_cart.setHasFixedSize(true);
+        btnback=view.findViewById(R.id.btnback);
+        btnback.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
+            }
+        });
         btnpro_order=view.findViewById(R.id.btnplaceorder);
         getCart();
         return (view);

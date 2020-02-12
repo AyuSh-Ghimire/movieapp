@@ -29,8 +29,9 @@ public class CartActivity extends AppCompatActivity {
     String product_image;
     ImageView product_img;
     String quantity;
+    Double total;
     private FrameLayout cframelayout;
-    private TextView textViewName,textViewRate,textViewQuantity;
+    private TextView textViewName,textViewRate,textViewQuantity, textViewTotal;
     RecyclerView.LayoutManager layoutManager;
     public static List<Product> lstproduct = new ArrayList<>();
     @Override
@@ -43,6 +44,7 @@ public class CartActivity extends AppCompatActivity {
         textViewName= findViewById(R.id.txtcproname);
         textViewRate = findViewById(R.id.txtcprate);
         textViewQuantity = findViewById(R.id.txtquantity);
+        textViewTotal = findViewById(R.id.txttotal);
         setFragment(new CartFragment());
 
         Bundle extras =getIntent().getExtras();
@@ -50,10 +52,13 @@ public class CartActivity extends AppCompatActivity {
             product_image=extras.getString("product_img");
             product_rate=extras.getString("textViewRate");
             product_name=extras.getString("textViewName");
+            quantity=extras.getString("quantity");
             textViewName.setText(product_name);
             textViewRate.setText(product_rate);
             textViewQuantity.setText(quantity);
-            quantity=extras.getString("quantity");
+            total = Double.parseDouble(product_rate) * Double.parseDouble(quantity);
+            textViewTotal.setText(String.valueOf(total));
+
             String imgPath = url.BASE_URL + "uploads/" + product_image;
             try {
                 URL url=new URL(imgPath);
