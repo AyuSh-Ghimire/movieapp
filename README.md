@@ -10,7 +10,8 @@ They can eliminate travel time and cost. They can get their skin problem solutio
 Also, Application can remains open all the time 24/7.So MyE-Cosmetics is android application that simplifies shopping and 
 reduces human effort and time. Among different type of E-commerce, MyE-Cosmetics is (Business to customer).
 # Dependencies
-### implementation fileTree(dir: 'libs', include: ['*.jar'])
+### 
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'androidx.appcompat:appcompat:1.0.2'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
@@ -29,11 +30,13 @@ reduces human effort and time. Among different type of E-commerce, MyE-Cosmetics
     implementation 'com.cepheuen.elegant-number-button:lib:1.0.2'
     
 # Aims
-### To sell best products as per customer needs and demands.
+### 
+    • To sell best products as per customer needs and demands.
     • To saves user time.
     • To make application more user friendly.
 # Objectives
-### 	To learn about project planning.
+###
+	To learn about project planning.
 
 	To learn and implement the skill sets.
 
@@ -54,7 +57,8 @@ reduces human effort and time. Among different type of E-commerce, MyE-Cosmetics
 	To access the skincare treatment information.
 
 # Features
-### User Registration, login
+###
+   • User Registration, login
    • Vibration if wrong username or password is entered.
    • Viewing all items
    • Search product based on product name
@@ -65,8 +69,11 @@ reduces human effort and time. Among different type of E-commerce, MyE-Cosmetics
    • Token for authorization.
    • Logout
 # Youtube link
+
 # Backened API link
+
 # Rest Client
+
 ### Retrofit
 Retrofit is a REST Client for Java and Android. It makes it relatively easy to retrieve and upload JSON (or other structured data) via a REST based webservice. In Retrofit you configure which converter is used for the data serialization. Typically for JSON you use GSon, but you can add custom converters to process XML or other protocols. Retrofit uses the OkHttp library for HTTP requests.Retrofit is a REST Client for Java and Android. It makes it relatively easy to retrieve and upload JSON (or other structured data) via a REST based webservice. In Retrofit you configure which converter is used for the data serialization. Typically for JSON you use GSon, but you can add custom converters to process XML or other protocols. Retrofit uses the OkHttp library for HTTP requests.
 
