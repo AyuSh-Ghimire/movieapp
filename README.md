@@ -36,38 +36,28 @@ reduces human effort and time. Among different type of E-commerce, MyE-Cosmetics
     • To make application more user friendly.
 # Objectives
 ###
-	To learn about project planning.
-
-	To learn and implement the skill sets.
-
-	To broaden the scope of my knowledge.
-
-	To learn about usability.
-
-	To study the market of the application.
-
-	To learn about different ethical, social and legal consideration that may arise 	during and post development. 
-
-	To assure secure registration and login.
-
-	To allow receive the skin product according to the skin types and skin problem.
-
-	To design the interface for database manipulation.
-
-	To access the skincare treatment information.
+    • To learn about project planning.
+    • To learn and implement the skill sets.
+    • To broaden the scope of my knowledge.
+    • To learn about usability.
+    • To study the market of the application.
+    • To learn about different ethical, social and legal consideration that may arise 	during and post development. 
+    • To assure secure registration and login.
+    • To design the interface for database manipulation.
+    • To access the skincare treatment information.
 
 # Features
 ###
-   • User Registration, login
-   • Vibration if wrong username or password is entered.
-   • Viewing all items
-   • Search product based on product name
-    •Clear all the details of registration if device is shake.
-   • Adding items to cart
-   • proceed items to delivery.
-   • Google maps
-   • Token for authorization.
-   • Logout
+    • User Registration, login
+    • Vibration if wrong username or password is entered.
+    • Viewing all items
+    • Search product based on product name
+    • Clear all the details of registration if device is shake.
+    • Adding items to cart
+    • proceed items to delivery.
+    • Google maps
+    • Token for authorization.
+    • Logout
 # Youtube link
 
 # Backened API link
