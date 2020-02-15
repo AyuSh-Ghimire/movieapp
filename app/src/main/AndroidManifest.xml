@@ -3,7 +3,6 @@
     package="com.example.ecosmetics">
 
     <uses-permission android:name="android.permission.WAKE_LOCK" />
-
     <!--
          The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
          Google Maps Android API v2, but you must specify either coarse or fine
@@ -22,7 +21,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-
+        <activity android:name=".CheckoutActivity"
+            android:parentActivityName=".CheckoutActivity"></activity>
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").

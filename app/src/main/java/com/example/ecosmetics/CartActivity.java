@@ -6,9 +6,12 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.FrameLayout;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.ecosmetics.Fragment.CartFragment;
 import com.example.ecosmetics.Model.Product;
@@ -31,8 +34,9 @@ public class CartActivity extends AppCompatActivity {
     String quantity;
     Double total;
     private FrameLayout cframelayout;
-    private TextView textViewName,textViewRate,textViewQuantity, textViewTotal;
+    private TextView textViewName,textViewRate,textViewQuantity, textViewTotal,totalamount;
     RecyclerView.LayoutManager layoutManager;
+    ImageButton remove;
     public static List<Product> lstproduct = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +49,23 @@ public class CartActivity extends AppCompatActivity {
         textViewRate = findViewById(R.id.txtcprate);
         textViewQuantity = findViewById(R.id.txtquantity);
         textViewTotal = findViewById(R.id.txttotal);
+        remove = findViewById(R.id.cart_remove);
+        totalamount=findViewById(R.id.totalamount);
+
+        ImageButton imageButton = findViewById(R.id.cart_remove);
+        imageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(CartActivity.this,"Cart Removed",Toast.LENGTH_SHORT).show();
+                textViewName.setText("");
+                textViewRate.setText("");
+                textViewQuantity.setText("");
+                textViewTotal.setText("");
+                totalamount.setText("");
+                product_img.setVisibility(View.INVISIBLE);
+                remove.setVisibility(View.INVISIBLE);
+            }
+        });
         setFragment(new CartFragment());
 
         Bundle extras =getIntent().getExtras();

@@ -1,6 +1,7 @@
 package com.example.ecosmetics.Fragment;
 
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 
@@ -16,6 +17,8 @@ import android.widget.Toast;
 
 import com.example.ecosmetics.API.CartAPI;
 import com.example.ecosmetics.Adapter.CartAdapter;
+import com.example.ecosmetics.CheckoutActivity;
+import com.example.ecosmetics.DashboardActivity;
 import com.example.ecosmetics.Model.CartModel;
 import com.example.ecosmetics.R;
 import com.example.ecosmetics.URL.url;
@@ -33,7 +36,7 @@ import static android.content.Context.MODE_PRIVATE;
  */
 public class CartFragment extends Fragment {
     RecyclerView recycler_cart;
-    Button btnpro_order,btnback;
+    Button btnpro_order,btnback,btnplaceorder;
 
 
     public CartFragment() {
@@ -51,10 +54,19 @@ public class CartFragment extends Fragment {
         recycler_cart.setLayoutManager(new LinearLayoutManager(getContext(),RecyclerView.HORIZONTAL,false));
         recycler_cart.setHasFixedSize(true);
         btnback=view.findViewById(R.id.btnback);
+        btnplaceorder=view.findViewById(R.id.btnplaceorder);
+        btnplaceorder.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i= new Intent(getContext(), CheckoutActivity.class);
+                startActivity(i);
+            }
+        });
         btnback.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+        Intent i = new Intent(getContext(), DashboardActivity.class);
+        startActivity(i);
             }
         });
         btnpro_order=view.findViewById(R.id.btnplaceorder);
