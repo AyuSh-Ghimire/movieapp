@@ -68,12 +68,12 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 //        float zoomLevel = 17.0f;
 //        mMap.moveCamera(CameraUpdateFactory.newLatLng(softwarica));
 
-        LatLng dillibazar = new LatLng(27.704839,85.329228);
-        MarkerOptions markerOptions1 = new MarkerOptions().position(dillibazar).title("My skincare cosmetics in dillibazar pipolbot").snippet("").icon(BitmapDescriptorFactory.fromBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.store)));
+        LatLng dillibazarr = new LatLng(27.704839,85.329228);
+        MarkerOptions markerOptions1 = new MarkerOptions().position(dillibazarr).title("My skincare cosmetics in dillibazar pipolbot").snippet("").icon(BitmapDescriptorFactory.fromBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.store)));
         mMap.addMarker(markerOptions1);
 
-        LatLng pipalbot = new LatLng(25.566170,86.898041);
-        MarkerOptions markerOptions2 = new MarkerOptions().position(pipalbot).title("My Skincare cosmetics in pipalbot").snippet("").icon(BitmapDescriptorFactory.fromBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.store)));
+        LatLng pipalbott = new LatLng(25.566170,86.898041);
+        MarkerOptions markerOptions2 = new MarkerOptions().position(pipalbott).title("My Skincare cosmetics in pipalbot").snippet("").icon(BitmapDescriptorFactory.fromBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.store)));
         mMap.addMarker(markerOptions2);
 
         LatLng putalisadak = new LatLng(27.703691,85.322548);
