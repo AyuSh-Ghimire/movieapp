@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="8dp"
+    android:background="@color/dashboardbackground"
+    tools:context=".Fragment.CartFragment">
+
+    <Button
+        android:id="@+id/btnplaceorder"
+        android:layout_width="220dp"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="750dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="21dp"
+        android:background="@color/pink"
+        android:text="Checkout"
+        android:textColor="#fafafa" />
+
+    <Button
+        android:id="@+id/btnback"
+        android:layout_width="220dp"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="220dp"
+        android:layout_marginBottom="21dp"
+        android:background="#4caf50"
+        android:text="Go to shopping cart"
+        android:textColor="#fafafa" />
+
+<androidx.recyclerview.widget.RecyclerView
+    android:id="@+id/recycart"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_above="@+id/btnplaceorder"
+    >
+
+
+
+</androidx.recyclerview.widget.RecyclerView>
+
+
+
+
+</RelativeLayout>

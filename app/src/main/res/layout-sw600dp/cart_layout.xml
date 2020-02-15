@@ -46,6 +46,7 @@ app:cardElevation="8dp"
                         android:layout_height="wrap_content"
                         android:text="Rate"
                         android:layout_weight="5"
+                        android:layout_marginTop="10dp"
                         android:textSize="20sp"
                         android:textStyle="bold"/>
 
@@ -63,7 +64,7 @@ app:cardElevation="8dp"
                     <ImageButton
                         android:id="@+id/cart_remove"
                         android:layout_width="30dp"
-                        android:layout_height="30dp"
+                        android:layout_height="50dp"
                         android:clickable="true"
                         android:src="@drawable/cancel"
                         android:textStyle="bold" />
@@ -87,7 +88,7 @@ app:cardElevation="8dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Total"
-                        android:layout_marginLeft="99dp"
+                        android:layout_marginLeft="210dp"
                         android:textSize="20sp"
                         android:textStyle="bold"/>
 
