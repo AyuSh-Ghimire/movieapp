@@ -31,39 +31,14 @@ public class ECosmeticsWearActivity extends WearableActivity {
         btnlogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                login();
+                Intent i = new Intent(ECosmeticsWearActivity.this,DashboardActivity.class);
+                startActivity(i);
+                finish();
 
 
             }
         });
     }
-        private void login(){
 
-            String username = etusername.getText().toString();
-            String password = etpassword.getText().toString();
-
-            if (TextUtils.isEmpty(etusername.getText())) {
-                etusername.setError("Enter username");
-                return;
-
-            } else if (TextUtils.isEmpty(etpassword.getText())) {
-                etpassword.setError("Enter password");
-                return;
-            }
-
-            LoginBLL loginBLL = new LoginBLL();
-            StrictModeClass.StrictMode();
-            if (loginBLL.checkUser(username, password)) {
-
-                Intent intent = new Intent(ECosmeticsWearActivity.this, DashboardActivity.class);
-                startActivity(intent);
-                finish();
-
-            } else {
-                Toast.makeText(this, "Either username or password is incorrect", Toast.LENGTH_SHORT).show();
-                etusername.requestFocus();
-
-            }
-        }
 
 }

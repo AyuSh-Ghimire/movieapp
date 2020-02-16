@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/dark_grey"
+    android:background="@color/white"
     android:padding="@dimen/box_inset_layout_padding"
     tools:context=".DashboardActivity"
     tools:deviceIds="wear">
@@ -17,9 +17,26 @@
 
         <TextView
             android:id="@+id/text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/hello_world" />
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="List of Product: 15"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="20dp"
+            android:padding="16dp"/>
+
+        <TextView
+            android:id="@+id/text2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="List of category: 10"
+            android:layout_marginTop="50dp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:layout_marginBottom="20dp"
+            android:padding="16dp"/>
 
     </FrameLayout>
 </androidx.wear.widget.BoxInsetLayout>
