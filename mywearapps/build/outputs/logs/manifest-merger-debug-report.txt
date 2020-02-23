@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from D:\AndroidStudioProjects\ECosmetics\mywearapps\src\main\AndroidManifest.xml:2:1-38:12
-INJECTED from D:\AndroidStudioProjects\ECosmetics\mywearapps\src\main\AndroidManifest.xml:2:1-38:12
-INJECTED from D:\AndroidStudioProjects\ECosmetics\mywearapps\src\main\AndroidManifest.xml:2:1-38:12
-INJECTED from D:\AndroidStudioProjects\ECosmetics\mywearapps\src\main\AndroidManifest.xml:2:1-38:12
+ADDED from D:\AndroidStudioProjects\ECosmetics\mywearapps\src\main\AndroidManifest.xml:2:1-46:12
+INJECTED from D:\AndroidStudioProjects\ECosmetics\mywearapps\src\main\AndroidManifest.xml:2:1-46:12
+INJECTED from D:\AndroidStudioProjects\ECosmetics\mywearapps\src\main\AndroidManifest.xml:2:1-46:12
+INJECTED from D:\AndroidStudioProjects\ECosmetics\mywearapps\src\main\AndroidManifest.xml:2:1-46:12
 MERGED from [com.google.android.support:wearable:2.4.0] C:\Users\sadina jarga magar\.gradle\caches\transforms-2\files-2.1\3640f92610490a9675310b92a54f5b73\jetified-wearable-2.4.0\AndroidManifest.xml:2:1-15:12
 MERGED from [com.google.android.gms:play-services-wearable:17.0.0] C:\Users\sadina jarga magar\.gradle\caches\transforms-2\files-2.1\5643ca07d1d43760b3b6dc035c816a7c\play-services-wearable-17.0.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.percentlayout:percentlayout:1.0.0] C:\Users\sadina jarga magar\.gradle\caches\transforms-2\files-2.1\b0ad6258a309f065c2aa438f6e04ff30\percentlayout-1.0.0\AndroidManifest.xml:17:1-22:12
@@ -38,20 +38,20 @@ MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\sadina jarga 
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] C:\Users\sadina jarga magar\.gradle\caches\transforms-2\files-2.1\733fc1d306cee2c05d3e1fb0b7527020\lifecycle-livedata-core-2.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Users\sadina jarga magar\.gradle\caches\transforms-2\files-2.1\fdd65d8b6066fd289a68b42931dc03a2\core-runtime-2.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.constraintlayout:constraintlayout:1.1.0] C:\Users\sadina jarga magar\.gradle\caches\transforms-2\files-2.1\95d0ccb0cf090f6098e4676fd326088e\constraintlayout-1.1.0\AndroidManifest.xml:2:1-11:12
-INJECTED from D:\AndroidStudioProjects\ECosmetics\mywearapps\src\main\AndroidManifest.xml:2:1-38:12
-INJECTED from D:\AndroidStudioProjects\ECosmetics\mywearapps\src\main\AndroidManifest.xml:2:1-38:12
-INJECTED from D:\AndroidStudioProjects\ECosmetics\mywearapps\src\main\AndroidManifest.xml:2:1-38:12
+INJECTED from D:\AndroidStudioProjects\ECosmetics\mywearapps\src\main\AndroidManifest.xml:2:1-46:12
+INJECTED from D:\AndroidStudioProjects\ECosmetics\mywearapps\src\main\AndroidManifest.xml:2:1-46:12
+INJECTED from D:\AndroidStudioProjects\ECosmetics\mywearapps\src\main\AndroidManifest.xml:2:1-46:12
 	package
 		ADDED from D:\AndroidStudioProjects\ECosmetics\mywearapps\src\main\AndroidManifest.xml:3:5-37
 		INJECTED from D:\AndroidStudioProjects\ECosmetics\mywearapps\src\main\AndroidManifest.xml
 		INJECTED from D:\AndroidStudioProjects\ECosmetics\mywearapps\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from D:\AndroidStudioProjects\ECosmetics\mywearapps\src\main\AndroidManifest.xml
-		ADDED from D:\AndroidStudioProjects\ECosmetics\mywearapps\src\main\AndroidManifest.xml:2:1-38:12
+		ADDED from D:\AndroidStudioProjects\ECosmetics\mywearapps\src\main\AndroidManifest.xml:2:1-46:12
 		INJECTED from D:\AndroidStudioProjects\ECosmetics\mywearapps\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from D:\AndroidStudioProjects\ECosmetics\mywearapps\src\main\AndroidManifest.xml
-		ADDED from D:\AndroidStudioProjects\ECosmetics\mywearapps\src\main\AndroidManifest.xml:2:1-38:12
+		ADDED from D:\AndroidStudioProjects\ECosmetics\mywearapps\src\main\AndroidManifest.xml:2:1-46:12
 		INJECTED from D:\AndroidStudioProjects\ECosmetics\mywearapps\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from D:\AndroidStudioProjects\ECosmetics\mywearapps\src\main\AndroidManifest.xml:2:11-69
@@ -59,12 +59,24 @@ uses-permission#android.permission.WAKE_LOCK
 ADDED from D:\AndroidStudioProjects\ECosmetics\mywearapps\src\main\AndroidManifest.xml:5:5-68
 	android:name
 		ADDED from D:\AndroidStudioProjects\ECosmetics\mywearapps\src\main\AndroidManifest.xml:5:22-65
-uses-feature#android.hardware.type.watch
-ADDED from D:\AndroidStudioProjects\ECosmetics\mywearapps\src\main\AndroidManifest.xml:7:5-64
+uses-permission#android.permission.ACCESS_FINE_LOCATION
+ADDED from D:\AndroidStudioProjects\ECosmetics\mywearapps\src\main\AndroidManifest.xml:6:5-79
 	android:name
-		ADDED from D:\AndroidStudioProjects\ECosmetics\mywearapps\src\main\AndroidManifest.xml:7:19-61
+		ADDED from D:\AndroidStudioProjects\ECosmetics\mywearapps\src\main\AndroidManifest.xml:6:22-76
+uses-permission#android.permission.INTERNET
+ADDED from D:\AndroidStudioProjects\ECosmetics\mywearapps\src\main\AndroidManifest.xml:7:5-67
+	android:name
+		ADDED from D:\AndroidStudioProjects\ECosmetics\mywearapps\src\main\AndroidManifest.xml:7:22-64
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from D:\AndroidStudioProjects\ECosmetics\mywearapps\src\main\AndroidManifest.xml:8:5-79
+	android:name
+		ADDED from D:\AndroidStudioProjects\ECosmetics\mywearapps\src\main\AndroidManifest.xml:8:22-76
+uses-feature#android.hardware.type.watch
+ADDED from D:\AndroidStudioProjects\ECosmetics\mywearapps\src\main\AndroidManifest.xml:10:5-64
+	android:name
+		ADDED from D:\AndroidStudioProjects\ECosmetics\mywearapps\src\main\AndroidManifest.xml:10:19-61
 application
-ADDED from D:\AndroidStudioProjects\ECosmetics\mywearapps\src\main\AndroidManifest.xml:9:5-36:19
+ADDED from D:\AndroidStudioProjects\ECosmetics\mywearapps\src\main\AndroidManifest.xml:12:5-44:19
 MERGED from [com.google.android.support:wearable:2.4.0] C:\Users\sadina jarga magar\.gradle\caches\transforms-2\files-2.1\3640f92610490a9675310b92a54f5b73\jetified-wearable-2.4.0\AndroidManifest.xml:9:5-13:19
 MERGED from [com.google.android.support:wearable:2.4.0] C:\Users\sadina jarga magar\.gradle\caches\transforms-2\files-2.1\3640f92610490a9675310b92a54f5b73\jetified-wearable-2.4.0\AndroidManifest.xml:9:5-13:19
 MERGED from [com.google.android.gms:play-services-wearable:17.0.0] C:\Users\sadina jarga magar\.gradle\caches\transforms-2\files-2.1\5643ca07d1d43760b3b6dc035c816a7c\play-services-wearable-17.0.0\AndroidManifest.xml:22:5-20
@@ -84,45 +96,51 @@ MERGED from [androidx.constraintlayout:constraintlayout:1.1.0] C:\Users\sadina j
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.1.0] C:\Users\sadina jarga magar\.gradle\caches\transforms-2\files-2.1\e9dab9c67c1ee3668e0bbf86c6d8cbd8\core-1.1.0\AndroidManifest.xml:24:18-86
 	android:supportsRtl
-		ADDED from D:\AndroidStudioProjects\ECosmetics\mywearapps\src\main\AndroidManifest.xml:13:9-35
+		ADDED from D:\AndroidStudioProjects\ECosmetics\mywearapps\src\main\AndroidManifest.xml:16:9-35
 	android:label
-		ADDED from D:\AndroidStudioProjects\ECosmetics\mywearapps\src\main\AndroidManifest.xml:12:9-41
+		ADDED from D:\AndroidStudioProjects\ECosmetics\mywearapps\src\main\AndroidManifest.xml:15:9-41
 	android:icon
-		ADDED from D:\AndroidStudioProjects\ECosmetics\mywearapps\src\main\AndroidManifest.xml:11:9-43
+		ADDED from D:\AndroidStudioProjects\ECosmetics\mywearapps\src\main\AndroidManifest.xml:14:9-43
 	android:allowBackup
-		ADDED from D:\AndroidStudioProjects\ECosmetics\mywearapps\src\main\AndroidManifest.xml:10:9-35
+		ADDED from D:\AndroidStudioProjects\ECosmetics\mywearapps\src\main\AndroidManifest.xml:13:9-35
 	android:theme
-		ADDED from D:\AndroidStudioProjects\ECosmetics\mywearapps\src\main\AndroidManifest.xml:14:9-59
+		ADDED from D:\AndroidStudioProjects\ECosmetics\mywearapps\src\main\AndroidManifest.xml:17:9-59
 uses-library#com.google.android.wearable
-ADDED from D:\AndroidStudioProjects\ECosmetics\mywearapps\src\main\AndroidManifest.xml:15:9-17:39
+ADDED from D:\AndroidStudioProjects\ECosmetics\mywearapps\src\main\AndroidManifest.xml:18:9-20:39
 MERGED from [com.google.android.support:wearable:2.4.0] C:\Users\sadina jarga magar\.gradle\caches\transforms-2\files-2.1\3640f92610490a9675310b92a54f5b73\jetified-wearable-2.4.0\AndroidManifest.xml:10:9-12:40
 MERGED from [com.google.android.support:wearable:2.4.0] C:\Users\sadina jarga magar\.gradle\caches\transforms-2\files-2.1\3640f92610490a9675310b92a54f5b73\jetified-wearable-2.4.0\AndroidManifest.xml:10:9-12:40
 	android:required
-		ADDED from D:\AndroidStudioProjects\ECosmetics\mywearapps\src\main\AndroidManifest.xml:17:13-36
+		ADDED from D:\AndroidStudioProjects\ECosmetics\mywearapps\src\main\AndroidManifest.xml:20:13-36
 	android:name
-		ADDED from D:\AndroidStudioProjects\ECosmetics\mywearapps\src\main\AndroidManifest.xml:16:13-55
+		ADDED from D:\AndroidStudioProjects\ECosmetics\mywearapps\src\main\AndroidManifest.xml:19:13-55
 meta-data#com.google.android.wearable.standalone
-ADDED from D:\AndroidStudioProjects\ECosmetics\mywearapps\src\main\AndroidManifest.xml:23:9-25:36
+ADDED from D:\AndroidStudioProjects\ECosmetics\mywearapps\src\main\AndroidManifest.xml:26:9-28:36
 	android:value
-		ADDED from D:\AndroidStudioProjects\ECosmetics\mywearapps\src\main\AndroidManifest.xml:25:13-33
+		ADDED from D:\AndroidStudioProjects\ECosmetics\mywearapps\src\main\AndroidManifest.xml:28:13-33
 	android:name
-		ADDED from D:\AndroidStudioProjects\ECosmetics\mywearapps\src\main\AndroidManifest.xml:24:13-66
-activity#com.example.mywearapps.ECosmeticsWearActivity
-ADDED from D:\AndroidStudioProjects\ECosmetics\mywearapps\src\main\AndroidManifest.xml:27:9-35:20
+		ADDED from D:\AndroidStudioProjects\ECosmetics\mywearapps\src\main\AndroidManifest.xml:27:13-66
+activity#com.example.mywearapps.DashboardActivity
+ADDED from D:\AndroidStudioProjects\ECosmetics\mywearapps\src\main\AndroidManifest.xml:30:9-34:20
 	android:label
-		ADDED from D:\AndroidStudioProjects\ECosmetics\mywearapps\src\main\AndroidManifest.xml:29:13-45
+		ADDED from D:\AndroidStudioProjects\ECosmetics\mywearapps\src\main\AndroidManifest.xml:32:13-61
 	android:name
-		ADDED from D:\AndroidStudioProjects\ECosmetics\mywearapps\src\main\AndroidManifest.xml:28:13-51
+		ADDED from D:\AndroidStudioProjects\ECosmetics\mywearapps\src\main\AndroidManifest.xml:31:13-46
+activity#com.example.mywearapps.ECosmeticsWearActivity
+ADDED from D:\AndroidStudioProjects\ECosmetics\mywearapps\src\main\AndroidManifest.xml:35:9-43:20
+	android:label
+		ADDED from D:\AndroidStudioProjects\ECosmetics\mywearapps\src\main\AndroidManifest.xml:37:13-45
+	android:name
+		ADDED from D:\AndroidStudioProjects\ECosmetics\mywearapps\src\main\AndroidManifest.xml:36:13-51
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from D:\AndroidStudioProjects\ECosmetics\mywearapps\src\main\AndroidManifest.xml:30:13-34:29
+ADDED from D:\AndroidStudioProjects\ECosmetics\mywearapps\src\main\AndroidManifest.xml:38:13-42:29
 action#android.intent.action.MAIN
-ADDED from D:\AndroidStudioProjects\ECosmetics\mywearapps\src\main\AndroidManifest.xml:31:17-69
+ADDED from D:\AndroidStudioProjects\ECosmetics\mywearapps\src\main\AndroidManifest.xml:39:17-69
 	android:name
-		ADDED from D:\AndroidStudioProjects\ECosmetics\mywearapps\src\main\AndroidManifest.xml:31:25-66
+		ADDED from D:\AndroidStudioProjects\ECosmetics\mywearapps\src\main\AndroidManifest.xml:39:25-66
 category#android.intent.category.LAUNCHER
-ADDED from D:\AndroidStudioProjects\ECosmetics\mywearapps\src\main\AndroidManifest.xml:33:17-77
+ADDED from D:\AndroidStudioProjects\ECosmetics\mywearapps\src\main\AndroidManifest.xml:41:17-77
 	android:name
-		ADDED from D:\AndroidStudioProjects\ECosmetics\mywearapps\src\main\AndroidManifest.xml:33:27-74
+		ADDED from D:\AndroidStudioProjects\ECosmetics\mywearapps\src\main\AndroidManifest.xml:41:27-74
 uses-sdk
 INJECTED from D:\AndroidStudioProjects\ECosmetics\mywearapps\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from D:\AndroidStudioProjects\ECosmetics\mywearapps\src\main\AndroidManifest.xml
