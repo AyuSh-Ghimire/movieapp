@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\AndroidStudioProjects\\ECosmetics\\mywearapps\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-en-rXC\\values-en-rXC.xml",
+            "outputFile": "D:\\5th Sem\\Movie Search Engine\\10328200_170190_Sadina_Jarga_Magar_Android\\ECosmetics\\mywearapps\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-en-rXC\\values-en-rXC.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\sadina jarga magar\\.gradle\\caches\\transforms-2\\files-2.1\\e9dab9c67c1ee3668e0bbf86c6d8cbd8\\core-1.1.0\\res\\values-en-rXC\\values-en-rXC.xml",
+                    "source": "C:\\Users\\ayush\\.gradle\\caches\\transforms-2\\files-2.1\\1cd7eff88f5e86d0249af2958bf465f0\\core-1.1.0\\res\\values-en-rXC\\values-en-rXC.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -14,7 +14,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\sadina jarga magar\\.gradle\\caches\\transforms-2\\files-2.1\\3febd05bc23d811b160d90031d35eb7b\\wear-1.0.0\\res\\values-en-rXC\\values-en-rXC.xml",
+                    "source": "C:\\Users\\ayush\\.gradle\\caches\\transforms-2\\files-2.1\\a2126f597e06560bb4fe0e8ad0d531f4\\wear-1.0.0\\res\\values-en-rXC\\values-en-rXC.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",

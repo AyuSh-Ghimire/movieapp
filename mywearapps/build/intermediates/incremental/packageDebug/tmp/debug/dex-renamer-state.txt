@@ -1,7 +1,7 @@
-#Wed Feb 12 17:40:50 NPT 2020
-base.0=D\:\\AndroidStudioProjects\\ECosmetics\\mywearapps\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\out\\classes.dex
+#Wed Sep 09 13:02:28 NPT 2020
+base.0=D\:\\5th Sem\\Movie Search Engine\\10328200_170190_Sadina_Jarga_Magar_Android\\ECosmetics\\mywearapps\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\out\\classes.dex
 path.1=classes.dex
 renamed.1=classes2.dex
 path.0=classes.dex
 renamed.0=classes.dex
-base.1=D\:\\AndroidStudioProjects\\ECosmetics\\mywearapps\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\out\\classes.dex
+base.1=D\:\\5th Sem\\Movie Search Engine\\10328200_170190_Sadina_Jarga_Magar_Android\\ECosmetics\\mywearapps\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\out\\classes.dex

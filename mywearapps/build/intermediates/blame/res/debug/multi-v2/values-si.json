@@ -1,27 +1,27 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\AndroidStudioProjects\\ECosmetics\\mywearapps\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-si\\values-si.xml",
+            "outputFile": "D:\\5th Sem\\Movie Search Engine\\10328200_170190_Sadina_Jarga_Magar_Android\\ECosmetics\\mywearapps\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-si\\values-si.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\sadina jarga magar\\.gradle\\caches\\transforms-2\\files-2.1\\87bd8b7158cbc2e0ae2d7340eb4237ff\\jetified-play-services-basement-17.0.0\\res\\values-si\\values.xml",
+                    "source": "C:\\Users\\ayush\\.gradle\\caches\\transforms-2\\files-2.1\\a2126f597e06560bb4fe0e8ad0d531f4\\wear-1.0.0\\res\\values-si\\values-si.xml",
                     "from": {
-                        "startLines": "4",
-                        "startColumns": "0",
-                        "startOffsets": "247",
-                        "endColumns": "197",
-                        "endOffsets": "444"
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,171",
+                        "endColumns": "115,113",
+                        "endOffsets": "166,280"
                     },
                     "to": {
-                        "startLines": "10",
-                        "startColumns": "4",
-                        "startOffsets": "1242",
-                        "endColumns": "197",
-                        "endOffsets": "1435"
+                        "startLines": "21,22",
+                        "startColumns": "4,4",
+                        "startOffsets": "2885,3001",
+                        "endColumns": "115,113",
+                        "endOffsets": "2996,3110"
                     }
                 },
                 {
-                    "source": "C:\\Users\\sadina jarga magar\\.gradle\\caches\\transforms-2\\files-2.1\\77c2fc448e2bd0738fd67dce062b1efd\\play-services-base-17.0.0\\res\\values-si\\values.xml",
+                    "source": "C:\\Users\\ayush\\.gradle\\caches\\transforms-2\\files-2.1\\6fb3f6cd2b75dfe7dd10f87d94351f9e\\jetified-play-services-base-17.0.0\\res\\values-si\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
@@ -38,7 +38,24 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\sadina jarga magar\\.gradle\\caches\\transforms-2\\files-2.1\\e9dab9c67c1ee3668e0bbf86c6d8cbd8\\core-1.1.0\\res\\values-si\\values-si.xml",
+                    "source": "C:\\Users\\ayush\\.gradle\\caches\\transforms-2\\files-2.1\\c39f27975e2128f358c90a3c3f9b8fee\\jetified-play-services-basement-17.0.0\\res\\values-si\\values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "247",
+                        "endColumns": "197",
+                        "endOffsets": "444"
+                    },
+                    "to": {
+                        "startLines": "10",
+                        "startColumns": "4",
+                        "startOffsets": "1242",
+                        "endColumns": "197",
+                        "endOffsets": "1435"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\ayush\\.gradle\\caches\\transforms-2\\files-2.1\\1cd7eff88f5e86d0249af2958bf465f0\\core-1.1.0\\res\\values-si\\values-si.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -52,23 +69,6 @@
                         "startOffsets": "2784",
                         "endColumns": "100",
                         "endOffsets": "2880"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\sadina jarga magar\\.gradle\\caches\\transforms-2\\files-2.1\\3febd05bc23d811b160d90031d35eb7b\\wear-1.0.0\\res\\values-si\\values-si.xml",
-                    "from": {
-                        "startLines": "2,3",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,171",
-                        "endColumns": "115,113",
-                        "endOffsets": "166,280"
-                    },
-                    "to": {
-                        "startLines": "21,22",
-                        "startColumns": "4,4",
-                        "startOffsets": "2885,3001",
-                        "endColumns": "115,113",
-                        "endOffsets": "2996,3110"
                     }
                 }
             ]

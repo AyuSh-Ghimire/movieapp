@@ -187,7 +187,7 @@ public class LoginActivity extends AppCompatActivity {
     private void notifiy() {
         Notification notification = new NotificationCompat.Builder(this, CreateChannel.CHANNEL_1)
                 .setSmallIcon(R.drawable.ic_shopping_cart_black_24dp)
-                .setContentTitle("My E-Cosmetics app")
+                .setContentTitle("Movie Search Engine")
                 .setContentText("Login success :" + etusername.getText().toString())
                 .setCategory(NotificationCompat.CATEGORY_MESSAGE)
                 .build();

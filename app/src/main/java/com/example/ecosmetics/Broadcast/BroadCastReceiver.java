@@ -46,7 +46,7 @@ public class BroadCastReceiver extends BroadcastReceiver {
     private void DisplayNotification() {
         Notification notification=new NotificationCompat.Builder(context, CreateChannel.CHANNEL_1)
                 .setSmallIcon(R.drawable.ic_shopping_cart_black_24dp)
-                .setContentTitle("My E-cosmetics")
+                .setContentTitle("Movie Search Engine")
                 .setContentText("No internet connection, please connect")
                 .setCategory(NotificationCompat.CATEGORY_SYSTEM)
                 .build();
@@ -57,7 +57,7 @@ public class BroadCastReceiver extends BroadcastReceiver {
     private void DisplayNotification2() {
         Notification notification=new NotificationCompat.Builder(context, CreateChannel.CHANNEL_1)
                 .setSmallIcon(R.drawable.ic_shopping_cart_black_24dp)
-                .setContentTitle("My E-Cosmetics")
+                .setContentTitle("Movie Search Engine")
                 .setContentText("You have been connected to a network")
                 .setCategory(NotificationCompat.CATEGORY_MESSAGE)
                 .build();

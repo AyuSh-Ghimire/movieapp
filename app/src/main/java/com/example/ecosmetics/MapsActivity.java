@@ -69,15 +69,15 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 //        mMap.moveCamera(CameraUpdateFactory.newLatLng(softwarica));
 
         LatLng dillibazarr = new LatLng(27.704839,85.329228);
-        MarkerOptions markerOptions1 = new MarkerOptions().position(dillibazarr).title("My skincare cosmetics in dillibazar pipolbot").snippet("").icon(BitmapDescriptorFactory.fromBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.store)));
+        MarkerOptions markerOptions1 = new MarkerOptions().position(dillibazarr).title("Movie Search Engine Outlet in dillibazar pipolbot").snippet("").icon(BitmapDescriptorFactory.fromBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.store)));
         mMap.addMarker(markerOptions1);
 
         LatLng pipalbott = new LatLng(25.566170,86.898041);
-        MarkerOptions markerOptions2 = new MarkerOptions().position(pipalbott).title("My Skincare cosmetics in pipalbot").snippet("").icon(BitmapDescriptorFactory.fromBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.store)));
+        MarkerOptions markerOptions2 = new MarkerOptions().position(pipalbott).title("Movie Search Engine Outlet in pipalbot").snippet("").icon(BitmapDescriptorFactory.fromBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.store)));
         mMap.addMarker(markerOptions2);
 
         LatLng putalisadak = new LatLng(27.703691,85.322548);
-        MarkerOptions markerOptions3 = new MarkerOptions().position(putalisadak).title("My Skincare cosmetics in anamnagar").snippet("").icon(BitmapDescriptorFactory.fromBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.store)));
+        MarkerOptions markerOptions3 = new MarkerOptions().position(putalisadak).title("Movie Search Engine Outlet in anamnagar").snippet("").icon(BitmapDescriptorFactory.fromBitmap(BitmapFactory.decodeResource(getResources(), R.drawable.store)));
         mMap.addMarker(markerOptions3);
 
 

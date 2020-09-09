@@ -1,27 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\AndroidStudioProjects\\ECosmetics\\mywearapps\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-sw210dp-round-v23\\values-sw210dp-round-v23.xml",
+            "outputFile": "D:\\5th Sem\\Movie Search Engine\\10328200_170190_Sadina_Jarga_Magar_Android\\ECosmetics\\mywearapps\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-sw210dp-round-v23\\values-sw210dp-round-v23.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\sadina jarga magar\\.gradle\\caches\\transforms-2\\files-2.1\\3febd05bc23d811b160d90031d35eb7b\\wear-1.0.0\\res\\values-sw210dp-round-v23\\values-sw210dp-round-v23.xml",
-                    "from": {
-                        "startLines": "3,4,5,6,7,8",
-                        "startColumns": "4,4,4,4,4,4",
-                        "startOffsets": "118,186,251,322,385,448",
-                        "endColumns": "67,64,70,62,62,64",
-                        "endOffsets": "181,246,317,380,443,508"
-                    },
-                    "to": {
-                        "startLines": "10,11,12,13,14,15",
-                        "startColumns": "4,4,4,4,4,4",
-                        "startOffsets": "543,611,676,747,810,873",
-                        "endColumns": "67,64,70,62,62,64",
-                        "endOffsets": "606,671,742,805,868,933"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\sadina jarga magar\\.gradle\\caches\\transforms-2\\files-2.1\\3640f92610490a9675310b92a54f5b73\\jetified-wearable-2.4.0\\res\\values-sw210dp-round-v23\\values.xml",
+                    "source": "C:\\Users\\ayush\\.gradle\\caches\\transforms-2\\files-2.1\\8924970ace1abc77b474126fb85a0dae\\jetified-wearable-2.4.0\\res\\values-sw210dp-round-v23\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0",
@@ -35,6 +18,23 @@
                         "startOffsets": "55,120,182,250,310,370,432,495,938,1024",
                         "endColumns": "64,61,67,59,59,61,62,47,85,80",
                         "endOffsets": "115,177,245,305,365,427,490,538,1019,1100"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\ayush\\.gradle\\caches\\transforms-2\\files-2.1\\a2126f597e06560bb4fe0e8ad0d531f4\\wear-1.0.0\\res\\values-sw210dp-round-v23\\values-sw210dp-round-v23.xml",
+                    "from": {
+                        "startLines": "3,4,5,6,7,8",
+                        "startColumns": "4,4,4,4,4,4",
+                        "startOffsets": "118,186,251,322,385,448",
+                        "endColumns": "67,64,70,62,62,64",
+                        "endOffsets": "181,246,317,380,443,508"
+                    },
+                    "to": {
+                        "startLines": "10,11,12,13,14,15",
+                        "startColumns": "4,4,4,4,4,4",
+                        "startOffsets": "543,611,676,747,810,873",
+                        "endColumns": "67,64,70,62,62,64",
+                        "endOffsets": "606,671,742,805,868,933"
                     }
                 }
             ]

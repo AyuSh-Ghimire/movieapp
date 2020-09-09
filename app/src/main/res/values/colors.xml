@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#fea9d3</color>
-    <color name="colorPrimaryDark">#fea9d3</color>
-    <color name="colorAccent">#D81B60</color>
-    <color name="pink">#C92461</color>
-    <color name="lightpink">#E79CB7</color>
-    <color name="white">#ec407a</color>
+    <color name="colorPrimary">#333533</color>
+    <color name="colorPrimaryDark">#D64933</color>
+    <color name="colorAccent">#5C80BC</color>
+    <color name="pink">#4D5061</color>
+    <color name="lightpink">#F6F4F3</color>
+    <color name="white">#BC2C1A</color>
     <color name="black">#0A0505</color>
-    <color name="dashboardbackground">#f5f5f5</color>
-    <color name="txtcolor">#fff</color>
-    <color name="probg">#fff</color>
+    <color name="dashboardbackground">#F6F4F3</color>
+    <color name="txtcolor">#DACC3E</color>
+    <color name="probg">#1C1C1C</color>
 
 </resources>
