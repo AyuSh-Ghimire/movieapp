@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.ecosmetics">
+    package="com.example.Movie">
 
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <!--
@@ -21,8 +21,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".CheckoutActivity"
-            android:parentActivityName=".CheckoutActivity"></activity>
+        <activity android:name="com.example.Movie.CheckoutActivity"
+            android:parentActivityName="com.example.Movie.CheckoutActivity"></activity>
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -36,22 +36,22 @@
             android:value="@string/google_maps_key" />
 
         <activity
-            android:name=".MapsActivity"
+            android:name="com.example.Movie.MapsActivity"
             android:label="@string/title_activity_maps" />
         <activity
-            android:name=".ProductDetailedActivity"
-            android:parentActivityName=".ProductDetailedActivity" />
+            android:name="com.example.Movie.ProductDetailedActivity"
+            android:parentActivityName="com.example.Movie.ProductDetailedActivity" />
         <activity
-            android:name=".EditProfileActivity"
-            android:parentActivityName=".EditProfileActivity" />
+            android:name="com.example.Movie.EditProfileActivity"
+            android:parentActivityName="com.example.Movie.EditProfileActivity" />
         <activity
-            android:name=".ForgetPasswordActivity"
-            android:parentActivityName=".ForgetPasswordActivity" />
+            android:name="com.example.Movie.ForgetPasswordActivity"
+            android:parentActivityName="com.example.Movie.ForgetPasswordActivity" />
         <activity
-            android:name=".CartActivity"
-            android:parentActivityName=".CartActivity" />
+            android:name="com.example.Movie.CartActivity"
+            android:parentActivityName="com.example.Movie.CartActivity" />
         <activity
-            android:name=".SplashActivity"
+            android:name="com.example.Movie.SplashActivity"
             android:theme="@style/SplashTheme">
         <intent-filter>
             <action android:name="android.intent.action.MAIN" />
@@ -60,11 +60,11 @@
         </intent-filter>
         </activity>
         <activity
-            android:name=".DashboardActivity"
-            android:parentActivityName=".DashboardActivity" />
-        <activity android:name=".MainActivity" />
-        <activity android:name=".SignupActivity" />
-        <activity android:name=".LoginActivity"/>
+            android:name="com.example.Movie.DashboardActivity"
+            android:parentActivityName="com.example.Movie.DashboardActivity" />
+        <activity android:name="com.example.Movie.MainActivity" />
+        <activity android:name="com.example.Movie.SignupActivity" />
+        <activity android:name="com.example.Movie.LoginActivity"/>
 
 
     </application>

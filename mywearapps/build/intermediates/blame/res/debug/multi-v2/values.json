@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\5th Sem\\Movie Search Engine\\10328200_170190_Sadina_Jarga_Magar_Android\\ECosmetics\\mywearapps\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
+            "outputFile": "D:\\5th Sem\\Android Development\\10792009 _Ayush_Ghimire_Android Development\\MovieEngine\\mywearapps\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values\\values.xml",
             "map": [
                 {
                     "source": "C:\\Users\\ayush\\.gradle\\caches\\transforms-2\\files-2.1\\10c23e4693f75e7c26502c252f3749d1\\coordinatorlayout-1.0.0\\res\\values\\values.xml",
@@ -40,23 +40,6 @@
                     }
                 },
                 {
-                    "source": "D:\\5th Sem\\Movie Search Engine\\10328200_170190_Sadina_Jarga_Magar_Android\\ECosmetics\\mywearapps\\src\\main\\res\\values\\strings.xml",
-                    "from": {
-                        "startLines": "1,6,7",
-                        "startColumns": "4,4,4",
-                        "startOffsets": "17,211,272",
-                        "endColumns": "47,59,70",
-                        "endOffsets": "60,266,338"
-                    },
-                    "to": {
-                        "startLines": "442,495,501",
-                        "startColumns": "4,4,4",
-                        "startOffsets": "26487,31179,31793",
-                        "endColumns": "47,59,70",
-                        "endOffsets": "26530,31234,31859"
-                    }
-                },
-                {
                     "source": "C:\\Users\\ayush\\.gradle\\caches\\transforms-2\\files-2.1\\e99c3a17ea975d70d7fb621dcda8df3d\\percentlayout-1.0.0\\res\\values\\values.xml",
                     "from": {
                         "startLines": "2",
@@ -73,23 +56,6 @@
                         "endLines": "1092",
                         "endColumns": "24",
                         "endOffsets": "67029"
-                    }
-                },
-                {
-                    "source": "D:\\5th Sem\\Movie Search Engine\\10328200_170190_Sadina_Jarga_Magar_Android\\ECosmetics\\mywearapps\\src\\main\\res\\values\\dimens.xml",
-                    "from": {
-                        "startLines": "6,13",
-                        "startColumns": "4,4",
-                        "startOffsets": "196,532",
-                        "endColumns": "54,56",
-                        "endOffsets": "246,584"
-                    },
-                    "to": {
-                        "startLines": "216,255",
-                        "startColumns": "4,4",
-                        "startOffsets": "11359,13744",
-                        "endColumns": "54,56",
-                        "endOffsets": "11409,13796"
                     }
                 },
                 {
@@ -183,6 +149,40 @@
                         "endLines": "156,157,158,159,160,161,162,163,471,472,473,474,475,476,477,478,480,481,482,483,484,485,486,487,488,1077,1153",
                         "endColumns": "89,79,89,89,79,80,79,79,104,180,124,106,179,122,115,102,187,104,180,124,174,147,62,61,78,20,20",
                         "endOffsets": "7494,7574,7664,7754,7834,7915,7995,8075,28539,28720,28845,28952,29132,29255,29371,29474,29829,29934,30115,30240,30415,30563,30626,30688,30767,64678,69608"
+                    }
+                },
+                {
+                    "source": "D:\\5th Sem\\Android Development\\10792009 _Ayush_Ghimire_Android Development\\MovieEngine\\mywearapps\\src\\main\\res\\values\\dimens.xml",
+                    "from": {
+                        "startLines": "6,13",
+                        "startColumns": "4,4",
+                        "startOffsets": "196,532",
+                        "endColumns": "54,56",
+                        "endOffsets": "246,584"
+                    },
+                    "to": {
+                        "startLines": "216,255",
+                        "startColumns": "4,4",
+                        "startOffsets": "11359,13744",
+                        "endColumns": "54,56",
+                        "endOffsets": "11409,13796"
+                    }
+                },
+                {
+                    "source": "D:\\5th Sem\\Android Development\\10792009 _Ayush_Ghimire_Android Development\\MovieEngine\\mywearapps\\src\\main\\res\\values\\strings.xml",
+                    "from": {
+                        "startLines": "1,6,7",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "17,211,272",
+                        "endColumns": "47,59,70",
+                        "endOffsets": "60,266,338"
+                    },
+                    "to": {
+                        "startLines": "442,495,501",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "26487,31179,31793",
+                        "endColumns": "47,59,70",
+                        "endOffsets": "26530,31234,31859"
                     }
                 },
                 {

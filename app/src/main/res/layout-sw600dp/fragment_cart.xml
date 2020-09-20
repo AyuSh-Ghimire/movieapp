@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:padding="8dp"
     android:background="@color/dashboardbackground"
-    tools:context=".Fragment.CartFragment">
+    tools:context="com.example.Movie.Fragment.CartFragment">
 
     <Button
         android:id="@+id/btnplaceorder"

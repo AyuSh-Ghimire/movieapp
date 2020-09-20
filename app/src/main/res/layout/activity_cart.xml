@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:name="android.support.PARENT_ACTIVITY"
-    tools:context=".CartActivity">
+    tools:context="com.example.Movie.CartActivity">
 <include
     layout="@layout/cart_layout"
     android:id="@+id/cartbar"/>

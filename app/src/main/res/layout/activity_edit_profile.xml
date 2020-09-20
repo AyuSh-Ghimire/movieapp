@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:name="android.support.PARENT_ACTIVITY"
-    tools:context=".EditProfileActivity">
+    tools:context="com.example.Movie.EditProfileActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
